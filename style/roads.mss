@@ -24,9 +24,9 @@
 @access-marking: #eaeaea;
 @access-marking-living-street: #cccccc;
 
-@default-casing: #888888;
+@default-casing: #ffffff;
 @tertiary-casing: #8f8f8f;
-@residential-casing: #888888;
+@residential-casing: #bbb;
 @road-casing: @residential-casing;
 @service-casing: @residential-casing;
 @living-street-casing: @residential-casing;
@@ -36,7 +36,7 @@
 @steps-casing: @default-casing;
 @cycleway-casing: @default-casing;
 @bridleway-casing: @default-casing;
-@track-casing: @default-casing;
+@track-casing: #888888;
 
 @tertiary-shield: #3b3b3b;
 
