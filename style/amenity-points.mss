@@ -704,7 +704,7 @@
   }
 
   [feature = 'amenity_toilets'] {
-    [access = 'yes'][zoom >= 18],
+    [access = 'yes'][zoom >= 14],
     [zoom >= 19] {
       marker-file: url('symbols/amenity/toilets.svg');
       marker-fill: @amenity-brown;
@@ -848,7 +848,7 @@
 
   [feature = 'shop'] {
     [shop != 'mall'][shop != 'massage'][zoom >= 17],
-    [shop = 'supermarket'][zoom >= 16],
+    [shop = 'supermarket'][zoom >= 14],
     [shop = 'department_store'][zoom >= 16] {
       marker-clip: false;
       marker-fill: @shop-icon;
@@ -864,7 +864,7 @@
       marker-line-width: 0;
     }
 
-    [shop = 'supermarket'][zoom >= 16] {
+    [shop = 'supermarket'][zoom >= 14] {
       marker-file: url('symbols/shop/supermarket.svg');
     }
 
@@ -1252,10 +1252,11 @@
     marker-clip: false;
   }
 
-  [feature = 'tourism_picnic_site'][zoom >= 16] {
+  [feature = 'tourism_picnic_site'][zoom >= 14] {
     marker-file: url('symbols/tourism/picnic.svg');
     marker-fill: @leisure-green;
     marker-clip: false;
+    marker-width: 12;
     [access != ''][access != 'permissive'][access != 'yes'] {
       marker-opacity: 0.33;
     }
