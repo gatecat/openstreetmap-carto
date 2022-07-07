@@ -7,7 +7,7 @@
 @pedestrian-fill: #dddde8;
 @raceway-fill: pink;
 @road-fill: #ddd;
-@footway-fill: #333333;
+@footway-fill: black;
 @footway-fill-noaccess: #bbbbbb;
 @steps-fill: @footway-fill;
 @steps-fill-noaccess: #bbbbbb;
@@ -15,7 +15,7 @@
 @cycleway-fill-noaccess: #9999ff;
 @bridleway-fill: green;
 @bridleway-fill-noaccess: #aaddaa;
-@track-fill: #333333;
+@track-fill: black;
 @track-fill-noaccess: #e2c5bb;
 @aeroway-fill: #bbc;
 @runway-fill: @aeroway-fill;
@@ -2044,16 +2044,16 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           line/line-dasharray: 100,0;
         }
         [tracktype = 'grade2'] {
-          line/line-dasharray: 8.8,3.2;
+          line/line-dasharray: 4.4,1.6;
         }
         [tracktype = 'grade3'] {
-          line/line-dasharray: 5.6,4.0;
+          line/line-dasharray: 2.8,2.0;
         }
         [tracktype = 'grade4'] {
-          line/line-dasharray: 3.2,4.8;
+          line/line-dasharray: 1.6,2.4;
         }
         [tracktype = 'grade5'] {
-          line/line-dasharray: 1.6,6.4;
+          line/line-dasharray: 1.6,3.2;
         }
 
         [zoom >= 15] {
