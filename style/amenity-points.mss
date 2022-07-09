@@ -217,7 +217,7 @@
     marker-fill: @memorials;
   }
 
-  [feature = 'tourism_camp_site'][zoom >= 16] {
+  [feature = 'tourism_camp_site'][zoom >= 14] {
     marker-file: url('symbols/tourism/camping.svg');
     marker-fill: @accommodation-icon;
     marker-clip: false;
@@ -437,8 +437,8 @@
 
   [feature = 'man_made_mast']["tower:type" != 'lighting'],
   [feature = 'man_made_mast']["tower:type" = 'lighting'][zoom >= 18]   {
-    [zoom >= 14][height >= 160],
-    [zoom >= 15][height >= 80],
+    [zoom >= 14][height >= 40],
+    [zoom >= 15][height >= 40],
     [zoom >= 16][height >= 40],
     [zoom >= 17][height >= 20],
     [zoom >= 18] {
@@ -459,9 +459,9 @@
   [feature = 'man_made_tower']["tower:type" = 'bell_tower'][zoom >= 18],
   [feature = 'man_made_tower']["tower:type" = 'watchtower'][zoom >= 18],
   [feature = 'man_made_tower']["tower:type" != 'cooling']["tower:type" != 'lighting']["tower:type" != 'bell_tower']["tower:type" != 'watchtower'] {
-    [zoom >= 14][height >= 160],
-    [zoom >= 15][height >= 80],
-    [zoom >= 16][height >= 40],
+    [zoom >= 14][height >= 15],
+    [zoom >= 15][height >= 15],
+    [zoom >= 16][height >= 15],
     [zoom >= 17] {
       marker-file: url('symbols/man_made/tower_generic.svg');
       marker-fill: @man-made-icon;
@@ -809,7 +809,7 @@
     marker-clip: false;
   }
 
-  [feature = 'historic_castle'][castle_type != 'stately'][castle_type != 'manor'][zoom >= 15],
+  [feature = 'historic_castle'][castle_type != 'stately'][castle_type != 'manor'][zoom >= 14],
   [feature = 'historic_castle'][castle_type = 'stately'][zoom >= 16],
   [feature = 'historic_castle'][castle_type = 'manor'][zoom >= 16],
   [feature = 'historic_manor'][zoom >= 16] {
@@ -866,6 +866,7 @@
 
     [shop = 'supermarket'][zoom >= 14] {
       marker-file: url('symbols/shop/supermarket.svg');
+      marker-width: 12;
     }
 
     [shop = 'art'][zoom >= 18] {
@@ -1393,6 +1394,7 @@
     marker-file: url('symbols/natural/spring.svg');
     marker-fill: #7abcec;
     marker-clip: false;
+    marker-width: 8;
   }
 
   [feature = 'natural_cave_entrance'][zoom >= 15] {
@@ -1402,7 +1404,7 @@
 
   [feature = 'waterway_waterfall'] {
     [zoom >= 13][height > 20],
-    [zoom >= 14][height > 10],
+    [zoom >= 13][height > 10],
     [zoom >= 15][name != null],
     [zoom >= 16] {
       marker-file: url('symbols/natural/waterfall.svg');

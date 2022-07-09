@@ -2744,7 +2744,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
 
 #junctions {
   [highway = 'motorway_junction'] {
-    [zoom >= 11] {
+    [zoom >= 15] {
       text-name: "[ref]";
       text-size: 10;
       text-fill: @junction-text-color;
