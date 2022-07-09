@@ -51,6 +51,7 @@ Stylesheet:
   - style/addressing.mss
   - style/golf.mss
   - style/contours.mss
+  - style/hillshade.mss
 Layer:
   - id: landcover-low-zoom
     geometry: polygon
@@ -570,6 +571,14 @@ Layer:
       cache-features: true
       group-by: layernotnull
       minzoom: 10
+  - id: hillshade_30
+    geometry: raster
+    <<: *extents
+    Datasource:
+      file: /home/gatecat/Documents/MapBox/project/jnet_style/hdb/hillshades/hillshade_30.tif
+      type: gdal
+    layer: null
+    srs-name: "3857"
   - id: landuse-overlay
     geometry: polygon
     <<: *extents
