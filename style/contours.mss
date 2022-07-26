@@ -1,5 +1,5 @@
-@contour: lighten(brown, 30);
-@contours-text: lighten(brown, 30);
+@contour: lighten(brown, 15);
+@contours-text: lighten(brown, 15);
 
 @contours-line-width: 0.75;
 @contours-line-smooth: 0.9;   // A value from 0 to 1
@@ -12,21 +12,21 @@
   line-color: lighten(@contour, 10);
   line-smooth: @contours-line-smooth;
   line-width: @contours-line-width;
-  line-opacity: 0.5;
+  line-opacity: 0.6;
 }
 
 #contours50[zoom>=14] {
   line-color: lighten(@contour, 10);
   line-smooth: @contours-line-smooth;
   line-width: @contours-line-width * @contours-medium-multiplier;
-  line-opacity: 0.6;
+  line-opacity: 0.7;
 }
 
 #contours200[zoom>=12] {
   line-color: @contour;
   line-smooth: @contours-line-smooth;
   line-width: @contours-line-width * @contours-major-multiplier;
-  line-opacity: 0.6;
+  line-opacity: 0.7;
 }
 
 #contours-text50 {
