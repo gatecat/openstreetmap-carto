@@ -55,6 +55,7 @@ Stylesheet:
   - style/admin.mss
   - style/addressing.mss
   - style/golf.mss
+  - style/hillshade.mss
 Layer:
   - id: landcover-low-zoom
     geometry: polygon
@@ -527,6 +528,14 @@ Layer:
       cache-features: true
       group-by: layernotnull
       minzoom: 10
+  - id: hillshade
+    geometry: raster
+    <<: *extents
+    Datasource:
+      file: /home/gatecat/osm_contour/hillshade.tif
+      type: gdal
+    layer: null
+    srs-name: "3857"
   - id: landuse-overlay
     geometry: polygon
     <<: *extents
@@ -1444,7 +1453,7 @@ Layer:
         ) AS stations
     properties:
       cache-features: true
-      minzoom: 12
+      minzoom: 10
   - id: junctions
     geometry: point
     <<: *extents

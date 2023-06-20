@@ -1381,7 +1381,7 @@
     marker-fill: @man-made-icon;
   }
 
-  [feature = 'natural_peak'][zoom >= 11] {
+  [feature = 'natural_peak'][zoom >= 20] {
     marker-file: url('symbols/natural/peak.svg');
     marker-fill: @landform-color;
     marker-clip: false;
@@ -1393,7 +1393,7 @@
     marker-clip: false;
   }
 
-  [feature = 'natural_saddle'][zoom >= 15] {
+  [feature = 'natural_saddle'][zoom >= 20] {
     marker-file: url('symbols/natural/saddle.svg');
     marker-fill: @landform-color;
     marker-clip: false;
