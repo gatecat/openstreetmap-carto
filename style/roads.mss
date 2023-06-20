@@ -59,7 +59,7 @@
           line-color: #cc5500;
         }
         [usage = 'branch'][highspeed != 'yes'] {
-          line-color: #cccc00;
+          line-color: #999900;
         }
         [highspeed = 'yes'] {
           line-color: #ff0000;

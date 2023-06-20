@@ -630,8 +630,8 @@ Layer:
             way
           FROM planet_osm_line
           WHERE route = 'bus'
-            AND tags->'operator' != 'Flixbus'
-            AND ST_Length(way) > 5000
+            AND (tags->'operator' NOT IN ('Flixbus', 'Lufthansa Express Bus') OR tags->'operator' IS NULL)
+            AND ST_Length(way) > 3000
         ) AS bus_routes
     properties:
       minzoom: 8
@@ -1402,7 +1402,7 @@ Layer:
         ) AS placenames_small
     properties:
       cache-features: true
-      minzoom: 12
+      minzoom: 10
   - id: stations
     geometry: point
     <<: *extents

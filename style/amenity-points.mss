@@ -2071,7 +2071,7 @@
   [feature = 'leisure_nature_reserve'],
   [feature = 'boundary_aboriginal_lands'],
   [feature = 'boundary_protected_area'] {
-    [zoom >= 8][way_pixels > 3000][is_building = 'no'],
+    [zoom >= 14][way_pixels > 3000][is_building = 'no'],
     [zoom >= 17] {
       text-name: "[name]";
       text-size: @landcover-font-size;
@@ -2859,10 +2859,10 @@
     text-halo-fill: @standard-halo-fill;
   }
 
-  [feature = 'aeroway_aerodrome']['int_access' = 'yes']['icao' != null]['iata' != null][zoom >= 11][zoom < 17],
-  [feature = 'aeroway_aerodrome']['int_access' = 'restricted'][zoom >= 13][zoom < 18],
-  [feature = 'aeroway_aerodrome']['icao' = null][zoom >= 13][zoom < 18],
-  [feature = 'aeroway_aerodrome']['iata' = null][zoom >= 13][zoom < 18] {
+  [feature = 'aeroway_aerodrome']['int_access' = 'yes']['icao' != null]['iata' != null][zoom >= 15][zoom < 17],
+  [feature = 'aeroway_aerodrome']['int_access' = 'restricted'][zoom >= 15][zoom < 18],
+  [feature = 'aeroway_aerodrome']['icao' = null][zoom >= 15][zoom < 18],
+  [feature = 'aeroway_aerodrome']['iata' = null][zoom >= 15][zoom < 18] {
     [way_pixels <= 192000],
     [way_pixels = null] {
       text-name: "[name]";
