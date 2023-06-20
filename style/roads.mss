@@ -2,6 +2,8 @@
 
 @unimportant-road: @residential-casing;
 
+@platform-fill: #bbbbbb;
+
 @minor-construction: #aaa;
 @service-construction: #aaa;
 
@@ -43,29 +45,61 @@
 
 @railway-text-repeat-distance: 200;
 
-#roads-casing, #bridges, #tunnels {
-  ::casing {
-    [feature = 'railway_tram'],
-    [feature = 'railway_tram-service'][zoom >= 6] {
-      #bridges {
-        [zoom >= 6] {
-          line-width: 4;
-          [zoom >= 6] {
-            line-width: 5;
+#roads-low-zoom[zoom < 7],
+#roads-fill[zoom >= 7],
+#bridges[zoom >= 7],
+#tunnels[zoom >= 7] {
+  ::fill {
+    [feature = 'railway_rail'][zoom >= 8],
+    [feature = 'railway_INT-spur-siding-yard'][zoom >= 13] {
+      #roads-fill, #bridges {
+        line-join: round;
+        line-width: 1.2;
+        [usage = 'main'][highspeed != 'yes'] {
+          line-color: #cc5500;
+        }
+        [usage = 'branch'][highspeed != 'yes'] {
+          line-color: #cccc00;
+        }
+        [highspeed = 'yes'] {
+          line-color: #ff0000;
+        }
+        [feature = 'railway_INT-spur-siding-yard'] {
+          dark/line-width: 2;
+          dark/line-color: #aaa;
+          light/line-width: 0.8;
+          light/line-dasharray: 0,8,8,1;
+          [zoom >= 18] {
+            dark/line-width: 3;
+            light/line-width: 1;
           }
-          line-color: @bridge-casing;
-          line-join: round;
         }
       }
-    }
-
-    [feature = 'railway_subway'],
-    [feature = 'railway_construction']['construction' = 'subway'] {
-      #bridges {
-        [zoom >= 6] {
-          line-width: 5.5;
-          line-color: @bridge-casing;
-          line-join: round;
+      #tunnels {
+        line-color: #787878;
+        line-width: 2.8;
+        line-dasharray: 6,4;
+        line-clip: false;
+        [usage = 'main'][highspeed = 'no'] {
+          line-color: #cc5578;
+        }
+        [usage = 'branch'][highspeed = 'no'] {
+          line-color: #cccc78;
+        }
+        [highspeed = 'yes'] {
+          line-color: #ff7878;
+        }
+        [feature = 'railway_INT-spur-siding-yard'] {
+          line-color: #aaa;
+          line-width: 1.9;
+          line-dasharray: 3,3;
+          [zoom >= 18] {
+          line-width: 2.7;
+          }
+        }
+        [feature = 'railway_rail'][zoom >= 18] {
+          line-dasharray: 8,6;
+          line-width: 3.8;
         }
       }
     }
@@ -73,118 +107,184 @@
     [feature = 'railway_light_rail'],
     [feature = 'railway_funicular'],
     [feature = 'railway_narrow_gauge'] {
-      #bridges {
-        [zoom >= 6] {
-          line-width: 5.5;
-          line-color: @bridge-casing;
-          line-join: round;
+      [zoom >= 8] {
+        line-color: #ccc;
+        [zoom >= 10] { line-color: #aaa; }
+        [zoom >= 13] { line-color: #666; }
+        line-width: 1;
+        [zoom >= 13] { line-width: 2; }
+        #tunnels {
+          line-dasharray: 5,3;
         }
       }
     }
 
-    [feature = 'railway_rail'],
-    [feature = 'railway_preserved'],
-    [feature = 'railway_monorail'][zoom >= 6] {
-      #bridges {
-        [zoom >= 6] {
-          line-width: 6.5;
-          line-color: @bridge-casing;
-          line-join: round;
+    [feature = 'railway_miniature'] {
+      [zoom >= 15] {
+        line/line-width: 1.2;
+        line/line-color: #999;
+        dashes/line-width: 3;
+        dashes/line-color: #999;
+        dashes/line-dasharray: 1,10;
+      }
+    }
+
+    [feature = 'railway_tram'],
+    [feature = 'railway_tram-service'][zoom >= 15] {
+      [zoom >= 12] {
+        line-color: #6E6E6E;
+        line-width: 0.75;
+        [zoom >= 14] {
+          line-width: 1;
+        }
+        [zoom >= 15] {
+          line-width: 1.5;
+          [feature = 'railway_tram-service'] {
+            line-width: 0.5;
+          }
+        }
+        [zoom >= 17] {
+          line-width: 2;
+          [feature = 'railway_tram-service'] {
+            line-width: 1;
+          }
+        }
+        [zoom >= 18] {
+          [feature = 'railway_tram-service'] {
+            line-width: 1.5;
+          }
+        }
+        [zoom >= 19] {
+          [feature = 'railway_tram-service'] {
+            line-width: 2;
+          }
+        }
+        #tunnels {
+          line-dasharray: 5,3;
         }
       }
     }
 
-    [feature = 'railway_INT-spur-siding-yard'] {
+    [feature = 'railway_subway'] {
+      [zoom >= 12] {
+        line-width: 2;
+        line-color: #999;
+        #tunnels {
+          line-dasharray: 5,3;
+        }
+      }
       #bridges {
-        [zoom >= 6] {
-          line-width: 5.7;
-          line-color: @bridge-casing;
-          line-join: round;
+        [zoom >= 14] {
+          line-width: 2;
+          line-color: #999;
         }
       }
     }
 
-    [feature = 'railway_disused'][zoom >= 6],
-    [feature = 'railway_construction']['construction' != 'subway'],
-    [feature = 'railway_miniature'][zoom >= 6],
-    [feature = 'railway_INT-preserved-ssy'][zoom >= 6] {
-      #bridges {
-        [zoom >= 6] {
-          line-width: 6;
-          line-color: @bridge-casing;
-          line-join: round;
+    [feature = 'railway_preserved'] {
+      [zoom >= 12] {
+        dark/line-width: 1.5;
+        dark/line-color: #aaa;
+        dark/line-join: round;
+        [zoom >= 13] {
+          dark/line-width: 3;
+          dark/line-color: #999999;
+          light/line-width: 1;
+          light/line-color: white;
+          light/line-dasharray: 0,1,8,1;
+          light/line-join: round;
         }
       }
     }
-  }
 
-  ::bridges_and_tunnels_background {
-    [feature = 'railway_rail'][zoom >= 6],
-    [feature = 'railway_preserved'][zoom >= 6],
-    [feature = 'railway_monorail'][zoom >= 6] {
-      #bridges {
-        line-width: 5;
-        line-color: white;
+    [feature = 'railway_INT-preserved-ssy'] {
+      [zoom >= 12] {
+        dark/line-width: 1;
+        dark/line-color: #aaa;
+        dark/line-join: round;
+        [zoom >= 13] {
+          dark/line-width: 2;
+          dark/line-color: #999999;
+          light/line-width: 0.8;
+          light/line-color: white;
+          light/line-dasharray: 0,1,8,1;
+          light/line-join: round;
+        }
+      }
+    }
+
+    [feature = 'railway_monorail'] {
+      [zoom >= 14] {
+        background/line-width: 4;
+        background/line-color: #fff;
+        background/line-opacity: 0.4;
+        background/line-cap: round;
+        background/line-join: round;
+        line/line-width: 3;
+        line/line-color: #777;
+        line/line-dasharray: 2,3;
+        line/line-cap: round;
+        line/line-join: round;
+      }
+    }
+
+    [feature = 'railway_construction'] {
+      [zoom >= 13] {
+        line-color: grey;
+        line-width: 2;
+        line-dasharray: 2,4;
+        line-join: round;
+        [zoom >= 14] {
+          line-dasharray: 2,3;
+        }
+        [zoom >= 15] {
+          line-width: 3;
+          line-dasharray: 3,3;
+        }
+      }
+    }
+
+    [feature = 'railway_disused'] {
+      [zoom >= 15] {
+        line-color: #aaa;
+        line-width: 2;
+        line-dasharray: 2,4;
         line-join: round;
       }
     }
 
-    [feature = 'railway_INT-spur-siding-yard'] {
-      #bridges {
-        [zoom >= 6] {
-          line-width: 4;
-          line-color: white;
-          line-join: round;
-        }
+    [feature = 'railway_platform'][int_surface != 'unpaved'] {
+      [zoom >= 16] {
+        line-join: round;
+        line-width: 6;
+        line-color: grey;
+        line-cap: round;
+        b/line-width: 4;
+        b/line-color: @platform-fill;
+        b/line-cap: round;
+        b/line-join: round;
       }
     }
 
-    [feature = 'railway_disused'][zoom >= 6],
-    [feature = 'railway_construction']['construction' != 'subway'],
-    [feature = 'railway_miniature'][zoom >= 6],
-    [feature = 'railway_INT-preserved-ssy'][zoom >= 6] {
-      #bridges {
-        [zoom >= 6] {
-          line-width: 4.5;
-          line-color: white;
-          line-join: round;
-        }
+    [feature = 'railway_platform'][int_surface = 'unpaved'] {
+      [zoom >= 16] {
+        line-join: round;
+        line-width: 6;
+        line-color: grey;
+        line-cap: round;
+        b/line-pattern-width: 4;
+        b/line-pattern-type: repeat;
+        b/line-pattern-alignment: global;
+        b/line-pattern-file: url("symbols/unpaved/unpaved_platform-fill.svg"); 
+        b/line-pattern-cap: round;
+        b/line-pattern-join: round;
       }
     }
 
-    [feature = 'railway_tram'],
-    [feature = 'railway_tram-service'][zoom >= 25] {
-      #bridges {
-        [zoom >= 6] {
-          line-width: 3;
-          [zoom >= 15] {
-            line-width: 4;
-          }
-          line-color: white;
-        }
-      }
-    }
-
-    [feature = 'railway_subway'],
-    [feature = 'railway_construction']['construction' = 'subway'] {
-      #bridges {
-        [zoom >= 6] {
-          line-width: 4;
-          line-color: white;
-          line-join: round;
-        }
-      }
-    }
-
-    [feature = 'railway_light_rail'],
-    [feature = 'railway_funicular'],
-    [feature = 'railway_narrow_gauge'] {
-      #bridges {
-        [zoom >= 14] {
-          line-width: 4;
-          line-color: white;
-          line-join: round;
-        }
+    [feature = 'railway_turntable'] {
+      [zoom >= 16] {
+        line-width: 1.5;
+        line-color: #999;
       }
     }
   }
@@ -300,3 +400,4 @@
     }
   }
 }
+

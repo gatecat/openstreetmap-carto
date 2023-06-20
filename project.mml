@@ -49,6 +49,7 @@ Stylesheet:
   - style/buildings.mss
   - style/stations.mss
   - style/amenity-points.mss
+  - style/bus-routes.mss
   - style/ferry-routes.mss
   - style/aerialways.mss
   - style/admin.mss
@@ -452,6 +453,8 @@ Layer:
             construction,
             service,
             link,
+            highspeed,
+            usage,
             layernotnull
           FROM ( -- subselect that contains both roads and rail
             SELECT
@@ -479,6 +482,8 @@ Layer:
                   ELSE 'no'
                 END AS link,
                 COALESCE(layer,0) AS layernotnull,
+                tags->'highspeed' as highspeed,
+                tags->'usage' as usage,
                 z_order
               FROM planet_osm_line
               WHERE (tunnel = 'yes' OR tunnel = 'building_passage' OR covered = 'yes')
@@ -503,6 +508,8 @@ Layer:
                 CASE WHEN service IN ('parking_aisle', 'drive-through', 'driveway') THEN 'INT-minor'::text ELSE 'INT-normal'::text END AS service,
                 'no' AS link,
                 COALESCE(layer,0) AS layernotnull,
+                tags->'highspeed' as highspeed,
+                tags->'usage' as usage,
                 z_order
               FROM planet_osm_line
               WHERE (tunnel = 'yes' OR tunnel = 'building_passage' OR covered = 'yes')
@@ -604,6 +611,21 @@ Layer:
         ) AS ferry_routes
     properties:
       minzoom: 8
+  - id: bus-routes
+    geometry: linestring
+    <<: *extents
+    Datasource:
+      <<: *osm2pgsql
+      table: |-
+        (SELECT
+            way
+          FROM planet_osm_line
+          WHERE route = 'bus'
+            AND tags->'operator' != 'Flixbus'
+            AND ST_Length(way) > 5000
+        ) AS bus_routes
+    properties:
+      minzoom: 8
   - id: turning-circle-casing
     geometry: point
     <<: *extents
@@ -690,6 +712,8 @@ Layer:
             construction,
             service,
             link,
+            highspeed,
+            usage,
             layernotnull
           FROM ( -- subselect that contains both roads and rail/aero
             SELECT
@@ -716,6 +740,8 @@ Layer:
                   WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary_link') THEN 'yes'
                   ELSE 'no'
                 END AS link,
+                tags->'highspeed' as highspeed,
+                tags->'usage' as usage,
                 COALESCE(layer,0) AS layernotnull,
                 osm_id,
                 z_order
@@ -748,6 +774,8 @@ Layer:
                 construction,
                 CASE WHEN service IN ('parking_aisle', 'drive-through', 'driveway') OR leisure IN ('slipway') THEN 'INT-minor'::text ELSE 'INT-normal'::text END AS service,
                 'no' AS link,
+                tags->'highspeed' as highspeed,
+                tags->'usage' as usage,
                 COALESCE(layer,0) AS layernotnull,
                 osm_id,
                 z_order
@@ -812,7 +840,7 @@ Layer:
       table: *roads_sql
     properties:
       cache-features: true
-      minzoom: 10
+      minzoom: 6
   - id: turning-circle-fill
     geometry: point
     <<: *extents
@@ -923,6 +951,8 @@ Layer:
             construction,
             service,
             link,
+            highspeed,
+            usage,
             layernotnull
           FROM ( -- subselect that contains both roads and rail/aero
             SELECT
@@ -949,6 +979,8 @@ Layer:
                   WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary_link') THEN 'yes'
                   ELSE 'no'
                 END AS link,
+                tags->'highspeed' as highspeed,
+                tags->'usage' as usage,
                 COALESCE(layer,0) AS layernotnull,
                 z_order
               FROM planet_osm_line
@@ -973,6 +1005,8 @@ Layer:
                 construction,
                 CASE WHEN service IN ('parking_aisle', 'drive-through', 'driveway') THEN 'INT-minor'::text ELSE 'INT-normal'::text END AS service,
                 'no' AS link,
+                tags->'highspeed' as highspeed,
+                tags->'usage' as usage,
                 COALESCE(layer,0) AS layernotnull,
                 z_order
               FROM planet_osm_line
@@ -990,7 +1024,7 @@ Layer:
     properties:
       cache-features: true
       group-by: layernotnull
-      minzoom: 10
+      minzoom: 6
   - id: guideways
     geometry: linestring
     <<: *extents
@@ -2078,7 +2112,7 @@ Layer:
             OR (tags @> 'golf=>hole' AND ref IS NOT NULL)
         ) AS text_line
     properties:
-      minzoom: 10
+      minzoom: 6
   - id: text-point
     geometry: point
     <<: *extents
@@ -2088,7 +2122,7 @@ Layer:
       # see https://github.com/gravitystorm/openstreetmap-carto/pull/1349#issuecomment-77805678
       table: *amenity_points_sql
     properties:
-      minzoom: 10
+      minzoom: 6
   - id: building-text
     geometry: point
     <<: *extents
