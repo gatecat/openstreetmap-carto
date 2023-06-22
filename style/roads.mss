@@ -109,9 +109,7 @@
     [feature = 'railway_funicular'],
     [feature = 'railway_narrow_gauge'] {
       [zoom >= 8] {
-        line-color: #ccc;
-        [zoom >= 10] { line-color: #aaa; }
-        [zoom >= 13] { line-color: #666; }
+        line-color: #995b29;
         line-width: 1;
         [zoom >= 13] { line-width: 2; }
         #tunnels {
@@ -183,8 +181,8 @@
     }
 
     [feature = 'railway_preserved'] {
-      [zoom >= 12] {
-        dark/line-width: 1.5;
+      [zoom >= 9] {
+        dark/line-width: 1.2;
         dark/line-color: #aaa;
         dark/line-join: round;
         [zoom >= 13] {

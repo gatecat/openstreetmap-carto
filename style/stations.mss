@@ -18,9 +18,8 @@
     }
   }
 
-  [railway = 'station'][zoom >= 10] {
-//    marker-file: url('symbols/circle.svg');
-    marker-fill: #cc5500;
+  [railway = 'station'][zoom >= 10][station != 'subway'][usage != 'leisure'] {
+    marker-fill: @station-color;
     marker-clip: false;
     marker-allow-overlap: true;
     marker-ignore-placement: true;
@@ -54,14 +53,14 @@
     }
   }
 
-  [railway = 'halt'] {
+  [railway = 'halt'][station != 'subway'][station != 'funicular'][usage != 'leisure'] {
     [zoom >= 10] {
-      marker-fill: #999900;
+      marker-fill: @station-color;
       marker-clip: false;
       marker-allow-overlap: true;
       marker-ignore-placement: true;
       marker-line-width: 0;
-      marker-width: 5;
+      marker-width: 4;
     }
     [zoom >= 15] {
       text-name: "[name]";
