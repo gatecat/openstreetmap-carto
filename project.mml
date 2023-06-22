@@ -795,6 +795,8 @@ Layer:
                 AND railway IS NOT NULL -- end of rail select
             ) AS features
           ORDER BY
+            CASE WHEN highspeed = 'yes' THEN 2 ELSE 1 END,
+            CASE WHEN usage = 'main' THEN 2 ELSE 1 END,
             layernotnull,
             z_order,
             CASE WHEN substring(feature for 8) = 'railway_' THEN 2 ELSE 1 END,
@@ -1103,7 +1105,11 @@ Layer:
             ref,
             railway,
             aerialway,
-            station
+            station,
+            mainline,
+            highspeed,
+            light_only,
+            usage
           FROM
           (SELECT
               ST_PointOnSurface(way) AS way,
@@ -1112,8 +1118,13 @@ Layer:
               railway,
               aerialway,
               tags->'station' AS station,
+              CASE WHEN EXISTS(SELECT ALL way, tags FROM planet_osm_line p WHERE ST_DWithin(s.way, p.way, 100) AND tags->'usage' = 'main') THEN 'yes' ELSE 'no' END AS mainline,
+              CASE WHEN EXISTS(SELECT ALL way, tags FROM planet_osm_line p WHERE ST_DWithin(s.way, p.way, 100) AND tags->'highspeed' = 'yes') THEN 'yes' ELSE 'no' END AS highspeed,
+              CASE WHEN EXISTS(SELECT ALL way, tags, railway FROM planet_osm_line p WHERE ST_DWithin(s.way, p.way, 100) AND p.railway IN ('light_rail', 'funicular', 'narrow_gauge', 'tram')) AND
+                  NOT EXISTS(SELECT ALL way, tags, railway FROM planet_osm_line p WHERE ST_DWithin(s.way, p.way, 100) AND p.railway = 'rail') THEN 'yes' ELSE 'no' END AS light_only,
+              tags->'usage' AS usage,
               way_area
-            FROM planet_osm_polygon
+            FROM planet_osm_polygon s
             WHERE way && !bbox! -- Not ST_PointOnSurface(way) because name might be NULL
               AND way_area < 768000*POW(!scale_denominator!*0.001*0.28,2)
           UNION ALL
@@ -1124,8 +1135,13 @@ Layer:
               railway,
               aerialway,
               tags->'station' AS station,
+              CASE WHEN EXISTS(SELECT ALL way, tags FROM planet_osm_line p WHERE ST_DWithin(s.way, p.way, 100) AND tags->'usage' = 'main') THEN 'yes' ELSE 'no' END AS mainline,
+              CASE WHEN EXISTS(SELECT ALL way, tags FROM planet_osm_line p WHERE ST_DWithin(s.way, p.way, 100) AND tags->'highspeed' = 'yes') THEN 'yes' ELSE 'no' END AS highspeed,
+              CASE WHEN EXISTS(SELECT ALL way, tags, railway FROM planet_osm_line p WHERE ST_DWithin(s.way, p.way, 100) AND p.railway IN ('light_rail', 'funicular', 'narrow_gauge', 'tram')) AND
+                  NOT EXISTS(SELECT ALL way, tags, railway FROM planet_osm_line p WHERE ST_DWithin(s.way, p.way, 100) AND p.railway = 'rail') THEN 'yes' ELSE 'no' END AS light_only,
+              tags->'usage' AS usage,
               NULL as way_area
-            FROM planet_osm_point
+            FROM planet_osm_point s
             WHERE way && !bbox!
             ) _
           WHERE railway IN ('station', 'halt', 'tram_stop')

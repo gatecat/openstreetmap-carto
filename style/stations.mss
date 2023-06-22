@@ -19,13 +19,23 @@
   }
 
   [railway = 'station'][zoom >= 10][station != 'subway'][usage != 'leisure'] {
-    marker-fill: @station-color;
+    marker-fill: #999900;
     marker-clip: false;
     marker-allow-overlap: true;
     marker-ignore-placement: true;
     marker-line-width: 0;
     [station != 'subway'] {
       marker-width: 6;
+    }
+    [highspeed = 'yes'] {
+      marker-fill: #ff0000;
+    }
+    [mainline = 'yes'] {
+      marker-fill: #cc5500;
+    }
+    [light_only = 'yes'] {
+      marker-fill: #995b29;
+      marker-width: 4;
     }
     [zoom >= 13][station != 'subway'],
     [zoom >= 14][station = 'subway'] {
@@ -55,12 +65,22 @@
 
   [railway = 'halt'][station != 'subway'][station != 'funicular'][usage != 'leisure'] {
     [zoom >= 10] {
-      marker-fill: @station-color;
+      marker-fill: #999900;
       marker-clip: false;
       marker-allow-overlap: true;
       marker-ignore-placement: true;
       marker-line-width: 0;
       marker-width: 4;
+      [highspeed = 'yes'] {
+        marker-fill: #ff0000;
+      }
+      [mainline = 'yes'] {
+        marker-fill: #cc5500;
+      }
+      [light_only = 'yes'] {
+        marker-fill: #995b29;
+        marker-width: 4;
+      }
     }
     [zoom >= 15] {
       text-name: "[name]";
