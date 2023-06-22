@@ -197,7 +197,7 @@
       text-name: '[name]';
       text-face-name: @book-fonts;
       text-fill: @placenames;
-      text-size: 13;
+      text-size: 16;
       text-wrap-width: 65; // 5.0 em
       text-line-spacing: -0.65; // -0.05 em
       text-margin: 9.1; // 0.7 em
@@ -205,13 +205,13 @@
       text-halo-radius: @standard-halo-radius * 1.5;
 
       [zoom >= 10] {
-        text-size: 14;
+        text-size: 16;
         text-wrap-width: 70; // 5.0 em
         text-line-spacing: -0.7; // -0.05 em
         text-margin: 9.8; // 0.7 em
       }
       [zoom >= 11] {
-        text-size: 15;
+        text-size: 16;
         text-wrap-width: 75; // 5.0 em
         text-line-spacing: -0.75; // -0.05 em
         text-margin: 10.5; // 0.7 em
@@ -257,13 +257,13 @@
       text-line-spacing: -1.0; // -0.10 em
       text-margin: 7.0; // 0.7 em
       [zoom >= 9] {
-        text-size: 12;
+        text-size: 14;
         text-wrap-width: 60; // 5.0 em
         text-line-spacing: -0.6; // -0.05 em
         text-margin: 8.4; // 0.7 em
       }
       [zoom >= 10] {
-        text-size: 13;
+        text-size: 14;
         text-wrap-width: 65; // 5.0 em
         text-line-spacing: -0.65; // -0.05 em
         text-margin: 9.1; // 0.7 em
@@ -288,7 +288,7 @@
   [category = 2] {
     [zoom >= 9][zoom < 16] {
       text-name: "[name]";
-      text-size: 10;
+      text-size: 12;
       text-fill: @placenames;
       text-face-name: @book-fonts;
       text-halo-fill: @standard-halo-fill;
@@ -319,9 +319,9 @@
 }
 
 #placenames-small::suburb {
-  [place = 'suburb'][zoom >= 10][zoom < 17] {
+  [place = 'suburb'][zoom >= 14][zoom < 17] {
     text-name: "[name]";
-    text-size: 10;
+    text-size: 12;
     text-fill: @placenames;
     text-face-name: @book-fonts;
     text-wrap-width: 40; // 5.0 em
@@ -354,7 +354,7 @@
   [place = 'village'] {
     [zoom >= 10][zoom < 17] {
       text-name: "[name]";
-      text-size: 8;
+      text-size: 10;
       text-fill: @placenames;
       text-face-name: @book-fonts;
       text-wrap-width: 30; // 5.0 em

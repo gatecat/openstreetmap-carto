@@ -77,15 +77,15 @@
         }
       }
       #tunnels {
-        line-color: #787878;
+        line-color: #cccc78;
         line-width: 1.5;
         line-dasharray: 6,4;
         line-clip: false;
-        [usage = 'main'][highspeed = 'no'] {
-          line-color: #cc5578;
+        [usage = 'main'][highspeed != 'yes'] {
+          line-color: #c49370;
         }
-        [usage = 'branch'][highspeed = 'no'] {
-          line-color: #cccc78;
+        [usage = 'branch'][highspeed != 'yes'] {
+          line-color: #a3a372;
         }
         [highspeed = 'yes'] {
           line-color: #ff7878;
@@ -132,8 +132,8 @@
 
     [feature = 'railway_tram'],
     [feature = 'railway_tram-service'][zoom >= 15] {
-      [zoom >= 12] {
-        line-color: #6E6E6E;
+      [zoom >= 8] {
+        line-color: #995b29;
         line-width: 0.75;
         [zoom >= 14] {
           line-width: 1;
@@ -167,9 +167,9 @@
     }
 
     [feature = 'railway_subway'] {
-      [zoom >= 12] {
-        line-width: 2;
-        line-color: #999;
+      [zoom >= 8] {
+        line-width: 0.75;
+        line-color: #995b29;
         #tunnels {
           line-dasharray: 5,3;
         }
