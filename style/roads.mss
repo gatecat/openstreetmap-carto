@@ -54,7 +54,7 @@
     [feature = 'railway_INT-spur-siding-yard'][zoom >= 13] {
       #roads-fill, #bridges {
         line-join: round;
-        line-width: 1.5;
+        line-width: 1.75;
         line-color: #999900;
         [usage = 'main'][highspeed != 'yes'] {
           line-color: #cc5500;
@@ -78,7 +78,7 @@
       }
       #tunnels {
         line-color: #cccc78;
-        line-width: 1.5;
+        line-width: 1.75;
         line-dasharray: 6,4;
         line-clip: false;
         [usage = 'main'][highspeed != 'yes'] {
@@ -110,7 +110,7 @@
     [feature = 'railway_narrow_gauge'] {
       [zoom >= 8] {
         line-color: #995b29;
-        line-width: 1;
+        line-width: 1.2;
         [zoom >= 13] { line-width: 2; }
         #tunnels {
           line-dasharray: 5,3;
