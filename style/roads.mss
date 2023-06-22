@@ -54,7 +54,8 @@
     [feature = 'railway_INT-spur-siding-yard'][zoom >= 13] {
       #roads-fill, #bridges {
         line-join: round;
-        line-width: 1.2;
+        line-width: 1.5;
+        line-color: #999900;
         [usage = 'main'][highspeed != 'yes'] {
           line-color: #cc5500;
         }
@@ -77,7 +78,7 @@
       }
       #tunnels {
         line-color: #787878;
-        line-width: 2.8;
+        line-width: 1.5;
         line-dasharray: 6,4;
         line-clip: false;
         [usage = 'main'][highspeed = 'no'] {

@@ -32,7 +32,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
       background/line-color: white;
       background/line-width: 1.2;
       line-join: bevel;
-      line-color: @admin-boundaries;
+      line-color: black;
       line-width: 1.2;
     }
     [zoom >= 5] {
@@ -83,7 +83,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
       background/line-color: white;
       background/line-width: 0.6;
       thin/line-join: bevel;
-      thin/line-color: @admin-boundaries-narrow;
+      thin/line-color: black;
       thin/line-width: 0.6;
     }
     [zoom >= 9] {

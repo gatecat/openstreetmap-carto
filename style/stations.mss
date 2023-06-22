@@ -19,8 +19,10 @@
   }
 
   [railway = 'station'][zoom >= 10] {
-    marker-file: url('symbols/square.svg');
+    marker-file: url('symbols/circle.svg');
     marker-fill: @station-color;
+    marker-line-color: black;
+    marker-line-width: 0.1;
     marker-clip: false;
     [station != 'subway'] {
       marker-width: 4;

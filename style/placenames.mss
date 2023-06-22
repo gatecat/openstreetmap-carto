@@ -321,11 +321,9 @@
 #placenames-small::suburb {
   [place = 'suburb'][zoom >= 10][zoom < 17] {
     text-name: "[name]";
-    text-size: 9;
+    text-size: 10;
     text-fill: @placenames;
     text-face-name: @book-fonts;
-    text-halo-fill: @standard-halo-fill;
-    text-halo-radius: @standard-halo-radius * 1.5;
     text-wrap-width: 40; // 5.0 em
     text-line-spacing: -0.55; // -0.05 em
     text-margin: 7.7; // 0.7 em
@@ -356,11 +354,9 @@
   [place = 'village'] {
     [zoom >= 10][zoom < 17] {
       text-name: "[name]";
-      text-size: 7;
+      text-size: 8;
       text-fill: @placenames;
       text-face-name: @book-fonts;
-      text-halo-fill: @standard-halo-fill;
-      text-halo-radius: @standard-halo-radius;
       text-wrap-width: 30; // 5.0 em
       text-line-spacing: -0.50; // -0.05 em
       text-margin: 7.0; // 0.7 em
