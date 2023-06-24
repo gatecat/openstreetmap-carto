@@ -3,6 +3,6 @@
 #bus-routes {
   [zoom >= 8] {
     line-color: @bus-route;
-    line-width: 0.75;
+    line-width: 1.25;
   }
 }

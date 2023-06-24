@@ -54,13 +54,13 @@
     [feature = 'railway_INT-spur-siding-yard'][zoom >= 13] {
       #roads-fill, #bridges {
         line-join: round;
-        line-width: 1.75;
-        line-color: #999900;
+        line-width: 2.25;
+        line-color: #d9bf00;
         [usage = 'main'][highspeed != 'yes'] {
           line-color: #cc5500;
         }
         [usage = 'branch'][highspeed != 'yes'] {
-          line-color: #999900;
+          line-color: #d9bf00;
         }
         [highspeed = 'yes'] {
           line-color: #ff0000;
@@ -78,7 +78,7 @@
       }
       #tunnels {
         line-color: #cccc78;
-        line-width: 1.75;
+        line-width: 2.25;
         line-dasharray: 6,4;
         line-clip: false;
         [usage = 'main'][highspeed != 'yes'] {
@@ -228,11 +228,22 @@
     }
 
     [feature = 'railway_construction'] {
-      [zoom >= 13] {
-        line-color: grey;
-        line-width: 2;
+      [zoom >= 9] {
+        line-width: 2.25;
         line-dasharray: 2,4;
         line-join: round;
+
+        line-color: #d9bf00;
+        [usage = 'main'][highspeed != 'yes'] {
+          line-color: #cc5500;
+        }
+        [usage = 'branch'][highspeed != 'yes'] {
+          line-color: #d9bf00;
+        }
+        [highspeed = 'yes'] {
+          line-color: #ff0000;
+        }
+
         [zoom >= 14] {
           line-dasharray: 2,3;
         }

@@ -1,8 +1,8 @@
 // --- Parks, woods, other green things ---
 
-@grass: #dfecd4;        // Lch(90,32,128) also grassland, meadow, village_green, garden, allotments
-@scrub: #c7cdb8;        // Lch(84,24,122)
-@forest: #c7d7c2;       // Lch(80,30,135)
+@grass: #ebf7cd;        // Lch(90,32,128) also grassland, meadow, village_green, garden, allotments
+@scrub: #eef0c9;        // Lch(84,24,122)
+@forest: #c1e6c8;       // Lch(80,30,135)
 @forest-text: #46673b;  // Lch(40,30,135)
 @park: #c8facc;         // Lch(94,30,145)
 @allotments: #c9e1bf;   // Lch(87,20,135)
