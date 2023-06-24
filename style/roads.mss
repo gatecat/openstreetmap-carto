@@ -55,12 +55,12 @@
       #roads-fill, #bridges {
         line-join: round;
         line-width: 2.25;
-        line-color: #d9bf00;
+        line-color: #bfa900;
         [usage = 'main'][highspeed != 'yes'] {
           line-color: #cc5500;
         }
         [usage = 'branch'][highspeed != 'yes'] {
-          line-color: #d9bf00;
+          line-color: #bfa900;
         }
         [highspeed = 'yes'] {
           line-color: #ff0000;
@@ -77,7 +77,7 @@
         }
       }
       #tunnels {
-        line-color: #cccc78;
+        line-color: #bfb880;
         line-width: 2.25;
         line-dasharray: 6,4;
         line-clip: false;
@@ -85,7 +85,7 @@
           line-color: #c49370;
         }
         [usage = 'branch'][highspeed != 'yes'] {
-          line-color: #a3a372;
+          line-color: #bfb880;
         }
         [highspeed = 'yes'] {
           line-color: #ff7878;
