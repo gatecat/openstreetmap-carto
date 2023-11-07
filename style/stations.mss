@@ -29,26 +29,6 @@
     [zoom >= 14][station = 'subway'] {
       marker-width: 6;
     }
-    [zoom >= 14][station !='subway'],
-    [zoom >=15] {
-      text-name: "[name]";
-      text-face-name: @bold-fonts;
-      text-size: 10;
-      text-fill: @station-text;
-      text-dy: 9;
-      text-halo-radius: @standard-halo-radius * 1.5;
-      text-halo-fill: @standard-halo-fill;
-      text-wrap-width: 30; // 3 em
-      text-line-spacing: -1.5; // -0.15 em
-    }
-    [zoom >= 15][station != 'subway'],
-    [zoom >= 16] {
-      marker-width: 9;
-      text-size: 11;
-      text-wrap-width: 33; // 3 em
-      text-line-spacing: -1.65; // -0.15 em
-      text-dy: 10;
-    }
   }
 
   [railway = 'halt'] {
@@ -60,17 +40,6 @@
       [zoom >= 15] {
         marker-width: 6;
       }
-    }
-    [zoom >= 15] {
-      text-name: "[name]";
-      text-face-name: @bold-fonts;
-      text-size: @standard-font-size;
-      text-fill: @station-text;
-      text-dy: 10;
-      text-halo-radius: @standard-halo-radius * 1.5;
-      text-halo-fill: @standard-halo-fill;
-      text-wrap-width: @standard-wrap-width;
-      text-line-spacing: @standard-line-spacing-size;
     }
   }
 
@@ -84,17 +53,6 @@
     [zoom >= 15] {
       marker-width: 6;
     }
-    [zoom >= 14] {
-      text-name: "[name]";
-      text-face-name: @book-fonts;
-      text-size: @standard-font-size;
-      text-fill: @station-text;
-      text-dy: 10;
-      text-halo-radius: @standard-halo-radius * 1.5;
-      text-halo-fill: @standard-halo-fill;
-      text-wrap-width: @standard-wrap-width;
-      text-line-spacing: @standard-line-spacing-size;
-    }
   }
 
   [railway = 'tram_stop'] {
@@ -106,17 +64,6 @@
       [zoom >= 15] {
         marker-width: 6;
       }
-    }
-    [zoom >= 16] {
-      text-name: "[name]";
-      text-face-name: @book-fonts;
-      text-size: @standard-font-size;
-      text-fill: @station-text;
-      text-dy: 10;
-      text-halo-radius: @standard-halo-radius * 1.5;
-      text-halo-fill: @standard-halo-fill;
-      text-wrap-width: @standard-wrap-width;
-      text-line-spacing: @standard-line-spacing-size;
     }
   }
 }
