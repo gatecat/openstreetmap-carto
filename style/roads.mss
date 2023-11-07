@@ -28,7 +28,7 @@
 
 @default-casing: #000000;
 @tertiary-casing: #000000;
-@residential-casing: #bbb;
+@residential-casing: #000000;
 @road-casing: @residential-casing;
 @service-casing: @residential-casing;
 @living-street-casing: @residential-casing;
@@ -62,32 +62,25 @@
 @residential-tunnel-fill: darken(@residential-fill, 5%);
 @living-street-tunnel-fill: lighten(@living-street-fill, 3%);
 
-@motorway-width: 3;
-@trunk-width: 3;
-@primary-width: 3;
+@motorway-width: 4;
+@trunk-width: 4;
+@primary-width: 4;
 @secondary-width: 3;
 @tertiary-width: 3;
 @residential-width:           2.5;
-@living-street-width:         2;
-@unclassified-width:         2;
-
-@bridleway-width:             0.3;
-@footway-width:               0.5;
-@cycleway-width:              0.7;
-@track-width:                 0.5;
-@track-grade1-width:          0.5;
-@track-grade2-width:          0.5;
+@living-street-width:         2.5;
+@unclassified-width:         2.5;
 
 @pedestrian-width:            3;
 @road-width:                  3;
-@service-width:               2;
-@minor-service-width:         2;
+@service-width:               2.5;
+@minor-service-width:         2.5;
 
 @track-width:                 2;
-@path-width:                  0.75;
+@path-width:                  0.3;
 
 
-@casing-width:                0.25;
+@casing-width:                0.3;
 
 @bridge-casing-width:         0.3;
 
@@ -349,11 +342,13 @@
     [feature = 'highway_cycleway'],
     [feature = 'highway_track'] {
       [zoom >= 14] {
-        line-width: @track-width;
-        line-color: #000000;
-        line-dasharray: 2,2;
-        line-join: round;
-        line-cap: round;
+        background/line-width: @track-width;
+        background/line-color: #ffffff;
+        foreground/line-width: @track-width;
+        foreground/line-color: #000000;
+        foreground/line-dasharray: 2,2;
+        foreground/line-join: round;
+        foreground/line-cap: round;
       }
     }
 
@@ -763,23 +758,13 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
 
     [feature = 'railway_rail'][zoom >= 8],
     [feature = 'railway_INT-spur-siding-yard'][zoom >= 13] {
-      [zoom < 13] {
-        line-color: #787878;
-        line-width: 0.5;
-        [zoom >= 8] { line-width: 0.8; }
-        [zoom >= 12] { line-width: 0.9; }
-        line-join: round;
-        .roads_low_zoom[int_tunnel = 'yes'], #tunnels {
-          line-dasharray: 5,2;
-        }
-      }
       [zoom >= 12] {
         #roads-fill, #bridges {
           dark/line-join: round;
           light/line-color: white;
           light/line-join: round;
           [feature = 'railway_rail'] {
-            dark/line-color: #707070;
+            dark/line-color: #000000;
             dark/line-width: 2;
             light/line-width: 0.75;
             light/line-dasharray: 8,8;
@@ -807,7 +792,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           }
         }
         #tunnels {
-          line-color: #787878;
+          line-color: #000000;
           line-width: 2.8;
           line-dasharray: 6,4;
           line-clip: false;

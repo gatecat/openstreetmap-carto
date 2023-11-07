@@ -17,22 +17,19 @@
     [zoom >= 15] {
       polygon-fill: @building-fill;
       line-color: @building-line;
-      line-width: .375;
+      line-width: .25;
       line-clip: false;
     }
+    [amenity = 'hospital'],
+    [amenity = 'hotel'],
+    [amenity = 'pub'],
+    [amenity = 'alpine_lodge'],
     [amenity = 'place_of_worship'],
     [aeroway = 'terminal'],
     [aerialway = 'station'],
     [building = 'train_station'],
     [public_transport = 'station'] {
-      polygon-fill: @building-major-z14;
-      [zoom >= 15] {
-        polygon-fill: @building-major-z15;
-        line-color: @building-major-line;
-        [zoom >= 16] {
-          polygon-fill: @building-major-fill;
-        }
-      }
+      line-width: .5;
     }
   }
 }
