@@ -2,7 +2,7 @@
 
 @grass: #ffffff;        // Lch(90,32,128) also grassland, meadow, village_green, garden, allotments
 @scrub: #ffffff;        // Lch(84,24,122)
-@forest: #e0efd6;       // Lch(80,30,135)
+@forest: #d9ebd0;       // Lch(80,30,135)
 @forest-text: #02a063;  // Lch(40,30,135)
 @park: #ffffff;         // Lch(94,30,145)
 @allotments: #ffffff;   // Lch(87,20,135)
@@ -815,13 +815,13 @@
 
   //Also landuse = forest, converted in the SQL
   [natural = 'wood'][zoom >= 13]::wood {
-    polygon-pattern-file: url('symbols/leaftype_unknown.svg'); // Lch(55,30,135)
-    [leaf_type = "broadleaved"] { polygon-pattern-file: url('symbols/leaftype_broadleaved.svg'); }
-    [leaf_type = "needleleaved"] { polygon-pattern-file: url('symbols/leaftype_needleleaved.svg'); }
-    [leaf_type = "mixed"] { polygon-pattern-file: url('symbols/leaftype_mixed.svg'); }
-    [leaf_type = "leafless"] { polygon-pattern-file: url('symbols/leaftype_leafless.svg'); }
-    polygon-pattern-alignment: global;
-    opacity: 0.4; // The entire layer has opacity to handle overlapping forests
+    polygon-pattern-file: url('symbols/forest_explorer.svg'); // Lch(55,30,135)
+    // [leaf_type = "broadleaved"] { polygon-pattern-file: url('symbols/leaftype_broadleaved.svg'); }
+    // [leaf_type = "needleleaved"] { polygon-pattern-file: url('symbols/leaftype_needleleaved.svg'); }
+    // [leaf_type = "mixed"] { polygon-pattern-file: url('symbols/leaftype_mixed.svg'); }
+    // [leaf_type = "leafless"] { polygon-pattern-file: url('symbols/leaftype_leafless.svg'); }
+    polygon-pattern-alignment: local;
+    opacity: 1.0; // The entire layer has opacity to handle overlapping forests
   }
 }
 

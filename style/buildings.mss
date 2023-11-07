@@ -17,7 +17,7 @@
     [zoom >= 15] {
       polygon-fill: @building-fill;
       line-color: @building-line;
-      line-width: .25;
+      line-width: .375;
       line-clip: false;
     }
     [amenity = 'hospital'],
@@ -29,7 +29,7 @@
     [aerialway = 'station'],
     [building = 'train_station'],
     [public_transport = 'station'] {
-      line-width: .5;
+      line-width: .75;
     }
   }
 }

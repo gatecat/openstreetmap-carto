@@ -62,27 +62,27 @@
 @residential-tunnel-fill: darken(@residential-fill, 5%);
 @living-street-tunnel-fill: lighten(@living-street-fill, 3%);
 
-@motorway-width: 4;
-@trunk-width: 4;
-@primary-width: 4;
-@secondary-width: 3;
-@tertiary-width: 3;
-@residential-width:           2.5;
-@living-street-width:         2.5;
-@unclassified-width:         2.5;
+@motorway-width: 6;
+@trunk-width: 6;
+@primary-width: 6;
+@secondary-width: 5;
+@tertiary-width: 5;
+@residential-width:           4;
+@living-street-width:         4;
+@unclassified-width:         4;
 
 @pedestrian-width:            3;
 @road-width:                  3;
-@service-width:               2.5;
-@minor-service-width:         2.5;
+@service-width:               3;
+@minor-service-width:         3;
 
-@track-width:                 2;
-@path-width:                  0.3;
+@track-width:                 3;
+@path-width:                  1;
 
 
-@casing-width:                0.3;
+@casing-width:                0.75;
 
-@bridge-casing-width:         0.3;
+@bridge-casing-width:         0.75;
 
 @mini-roundabout-width:           4;
 
@@ -347,8 +347,6 @@
         foreground/line-width: @track-width;
         foreground/line-color: #000000;
         foreground/line-dasharray: 2,2;
-        foreground/line-join: round;
-        foreground/line-cap: round;
       }
     }
 
@@ -740,8 +738,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         line-width: @path-width;
         line-color: #000000;
         line-dasharray: 2,2;
-        line-join: round;
-        line-cap: round;
       }
     }
 
