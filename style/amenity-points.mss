@@ -8,7 +8,7 @@
 @accommodation-text: @transportation-text;
 @airtransport: #8461C4; //also ferry_terminal
 @health-color: #BF0000;
-@amenity-blue: #734a08;
+@amenity-blue: #00b2ec;
 
 @amenity-brown: #734a08;
 @gastronomy-icon: #C77400;
@@ -45,7 +45,7 @@
 @private-opacity: 0.33;
 
 #amenity-points {
-  [feature = 'tourism_alpine_hut'][zoom >= 13],
+  [feature = 'tourism_alpine_hut'][amenity != 'restaurant'][zoom >= 13],
   [feature = 'tourism_wilderness_hut'][zoom >= 13],
   [feature = 'amenity_shelter'][zoom >= 16] {
     marker-file: url('symbols/amenity/shelter.svg');
@@ -61,6 +61,13 @@
     marker-width: 6;
     marker-fill: @accommodation-icon;
     marker-clip: false;
+  }
+
+  [feature = 'tourism_alpine_hut'][amenity = 'restaurant'][zoom >= 14] {
+    marker-clip: false;
+    marker-file: url('symbols/amenity/pub.svg');
+    marker-width: 16;
+    marker-fill: @amenity-blue;
   }
 
   [feature = 'amenity_atm'][zoom >= 18] {
@@ -86,6 +93,7 @@
   [feature = 'amenity_biergarten'][zoom >= 14] {
     marker-clip: false;
     marker-file: url('symbols/amenity/pub.svg');
+    marker-width: 16;
     marker-fill: @amenity-blue;
   }
 
@@ -522,10 +530,11 @@
 
 
   [feature = 'amenity_toilets'] {
-    [zoom >= 15] {
-      marker-file: url('symbols/wc.svg');
+    [zoom >= 14] {
+      marker-file: url('symbols/amenity/wc.svg');
       marker-fill: @amenity-blue;
       marker-clip: false;
+      marker-width: 16;
     }
   }
 
@@ -570,6 +579,7 @@
     marker-file: url('symbols/historic/castle.svg');
     marker-fill: @amenity-blue;
     marker-clip: false;
+    marker-width: 16;
   }
 
   [feature = 'historic_archaeological_site'][zoom >= 16] {

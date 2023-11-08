@@ -1739,6 +1739,7 @@ Layer:
                                 ELSE 'other' END AS shop,
               CASE WHEN building = 'no' OR building IS NULL THEN 'no' ELSE 'yes' END AS is_building,
               tags->'operator' AS operator,
+              amenity AS amenity,
               ref,
               way_area,
               COALESCE(way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0), 0) AS way_pixels
