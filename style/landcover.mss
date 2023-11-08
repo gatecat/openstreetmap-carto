@@ -750,26 +750,26 @@
     [int_wetland = 'marsh'],
     [int_wetland = 'saltmarsh'],
     [int_wetland = 'wet_meadow'] {
-      polygon-pattern-file: url('symbols/wetland_marsh.png');
-      polygon-pattern-alignment: global;
+      polygon-pattern-file: url('symbols/wetland_marsh_explorer.svg');
+      polygon-pattern-alignment: local;
     }
     [int_wetland = 'reedbed'] {
-      polygon-pattern-file: url('symbols/wetland_reed.png');
-      polygon-pattern-alignment: global;
+      polygon-pattern-file: url('symbols/wetland_explorer.svg');
+      polygon-pattern-alignment: local;
     }
     [int_wetland = 'mangrove'] {
-      polygon-pattern-file: url('symbols/wetland_mangrove.png');
-      polygon-pattern-alignment: global;
+      polygon-pattern-file: url('symbols/wetland_explorer.svg');
+      polygon-pattern-alignment: local;
     }
     [int_wetland = 'swamp'] {
-      polygon-pattern-file: url('symbols/wetland_swamp.png');
-      polygon-pattern-alignment: global;
+      polygon-pattern-file: url('symbols/wetland_explorer.svg');
+      polygon-pattern-alignment: local;
     }
     [int_wetland = 'bog'],
     [int_wetland = 'fen'],
     [int_wetland = 'string_bog'] {
-      polygon-pattern-file: url('symbols/wetland_bog.png');
-      polygon-pattern-alignment: global;
+      polygon-pattern-file: url('symbols/wetland_explorer.svg');
+      polygon-pattern-alignment: local;
     }
     [landuse = 'salt_pond'] {
       polygon-pattern-file: url('symbols/salt_pond.png');
@@ -793,8 +793,8 @@
       }
     }
     [natural = 'scrub'] {
-      polygon-pattern-file: url('symbols/scrub.png');
-      polygon-pattern-alignment: global;
+      polygon-pattern-file: url('symbols/scrub_explorer.svg');
+      polygon-pattern-alignment: local;
     }
   }
 
@@ -841,10 +841,11 @@
 
 #cliffs {
   [natural = 'cliff'][zoom >= 13] {
-    line-pattern-file: url('symbols/cliff.svg');
-    [zoom >= 15] {
+    line-pattern-file: url('symbols/cliff_explorer.svg');
+    line-pattern-opacity: 1.0;
+    /* [zoom >= 15] {
       line-pattern-file: url('symbols/cliff2.svg');
-    }
+    } */
   }
   [natural = 'ridge'][zoom >= 14] {
     line-pattern-file: url('symbols/ridge-mid.svg');
