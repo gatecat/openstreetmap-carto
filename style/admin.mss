@@ -444,7 +444,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
     line-clip: false;
   }
 }
-
+/*
 #admin-text[zoom >= 11][way_pixels >= 196000] {
   [admin_level = '1'][way_pixels >= 360000],
   [admin_level = '2'][way_pixels >= 360000],
@@ -549,3 +549,4 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
     }
   }
 }
+*/
