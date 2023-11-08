@@ -384,12 +384,6 @@
         text-line-spacing: -0.70; // -0.05 em
         text-margin: 9.8; // 0.7 em
       }
-      [zoom >= 16] {
-        text-size: 15;
-        text-wrap-width: 75; // 5.0 em
-        text-line-spacing: -0.75; // -0.05 em
-        text-margin: 10.5; // 0.7 em
-      }
     }
   }
 }
@@ -416,12 +410,6 @@
         text-line-spacing: -0.60; // -0.05 em
         text-margin: 8.4; // 0.7 em
       }
-      [zoom >= 16] {
-        text-size: 14;
-        text-wrap-width: 70; // 5.0 em
-        text-line-spacing: -0.70; // -0.05 em
-        text-margin: 9.8; // 0.7 em
-      }
     }
   }
   [place = 'hamlet'] {
@@ -445,14 +433,6 @@
         text-line-spacing: -0.8; // -0.08 em
         text-margin: 7.0; // 0.7 em
       }
-      [zoom >= 16] {
-        text-size: 12;
-        text-wrap-width: 60; // 5.0 em
-        text-line-spacing: -0.60; // -0.05 em
-        text-margin: 8.4; // 0.7 em
-        text-fill: @placenames-light;
-        text-halo-fill: white;
-      }
     }
   }
 }
@@ -470,14 +450,6 @@
     text-wrap-width: 45; // 4.5 em
     text-line-spacing: -0.8; // -0.08 em
     text-margin: 7.0; // 0.7 em
-    [zoom >= 16] {
-      text-size: 12;
-      text-wrap-width: 60; // 5.0 em
-      text-line-spacing: -0.60; // -0.05 em
-      text-margin: 8.4; // 0.7 em
-      text-fill: @placenames-light;
-      text-halo-fill: white;
-    }
   }
 }
 

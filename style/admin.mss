@@ -454,8 +454,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
   [zoom >= 12][admin_level = '6'],
   [zoom >= 13][admin_level = '7'],
   [zoom >= 14][admin_level = '8'],
-  [zoom >= 15][admin_level = '9'],
-  [zoom >= 16] {
+  [zoom >= 15][admin_level = '9'] {
     text-name: "[name]";
     text-face-name: @book-fonts;
     text-fill: @state-labels;

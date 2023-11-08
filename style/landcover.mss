@@ -281,20 +281,6 @@
     }
   }
 
-  [feature = 'leisure_dog_park'] {
-    [zoom >= 10] {
-      polygon-fill: @leisure;
-      [way_pixels >= 4]  { polygon-gamma: 0.75; }
-      [way_pixels >= 64] { polygon-gamma: 0.3;  }
-    }
-    [zoom >= 16] {
-      polygon-pattern-file: url('patterns/dog_park.svg');
-      polygon-pattern-alignment: global;
-      [way_pixels >= 4]  { polygon-pattern-gamma: 0.75; }
-      [way_pixels >= 64] { polygon-pattern-gamma: 0.3;  }
-    }
-  }
-
   [feature = 'leisure_golf_course'][zoom >= 10],
   [feature = 'leisure_miniature_golf'][zoom >= 15] {
     polygon-fill: @golf_course;
@@ -313,13 +299,6 @@
       polygon-pattern-alignment: global;
       [way_pixels >= 4]  { polygon-pattern-gamma: 0.75; }
       [way_pixels >= 64] { polygon-pattern-gamma: 0.3;  }
-    }
-    [zoom >= 16] {
-      line-width: 0.5;
-      line-color: desaturate(darken(@allotments, 10%), 10%);
-      [name != null] {
-        line-width: 0.7;
-      }
     }
   }
 
@@ -392,25 +371,11 @@
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
 
-  [feature = 'man_made_works'][zoom >= 16] {
-    line-width: .5;
-    line-color: @industrial-line;
-    [name != ''] {
-      line-width: 0.7;
-    }
-  }
 
   [feature = 'man_made_wastewater_plant'] {
     polygon-fill: @industrial;
     [zoom >= 15] {
       polygon-fill: @wastewater_plant;
-    }
-    [zoom >= 16] {
-      line-width: 0.5;
-      line-color: @wastewater_plant-line;
-      [name != ''] {
-        line-width: 0.7;
-      }
     }
   }
 
@@ -418,13 +383,6 @@
     polygon-fill: @industrial;
     [zoom >= 15] {
       polygon-fill: @water_works;
-    }
-    [zoom >= 16] {
-      line-width: 0.5;
-      line-color: @water_works-line;
-      [name != ''] {
-        line-width: 0.7;
-      }
     }
   }
 
@@ -751,25 +709,25 @@
     [int_wetland = 'saltmarsh'],
     [int_wetland = 'wet_meadow'] {
       polygon-pattern-file: url('symbols/wetland_marsh_explorer.svg');
-      polygon-pattern-alignment: local;
+      polygon-pattern-alignment: global;
     }
     [int_wetland = 'reedbed'] {
       polygon-pattern-file: url('symbols/wetland_explorer.svg');
-      polygon-pattern-alignment: local;
+      polygon-pattern-alignment: global;
     }
     [int_wetland = 'mangrove'] {
       polygon-pattern-file: url('symbols/wetland_explorer.svg');
-      polygon-pattern-alignment: local;
+      polygon-pattern-alignment: global;
     }
     [int_wetland = 'swamp'] {
       polygon-pattern-file: url('symbols/wetland_explorer.svg');
-      polygon-pattern-alignment: local;
+      polygon-pattern-alignment: global;
     }
     [int_wetland = 'bog'],
     [int_wetland = 'fen'],
     [int_wetland = 'string_bog'] {
       polygon-pattern-file: url('symbols/wetland_explorer.svg');
-      polygon-pattern-alignment: local;
+      polygon-pattern-alignment: global;
     }
     [landuse = 'salt_pond'] {
       polygon-pattern-file: url('symbols/salt_pond.png');
@@ -794,7 +752,7 @@
     }
     [natural = 'scrub'] {
       polygon-pattern-file: url('symbols/scrub_explorer.svg');
-      polygon-pattern-alignment: local;
+      polygon-pattern-alignment: global;
     }
   }
 
@@ -865,52 +823,12 @@
 }
 
 #barriers {
-  [zoom >= 16] {
+  [zoom >= 15] {
     line-width: 0.4;
     line-color: #444;
   }
-  [feature = 'barrier_hedge'][zoom >= 16] {
-    line-width: 1.5;
-    line-color: @hedge;
-    [zoom >= 17] {
-      line-width: 2;
-    }
-    [zoom >= 18] {
-      line-width: 3;
-    }
-    [zoom >= 19] {
-      line-width: 4;
-    }
-    [zoom >= 20] {
-      line-width: 5;
-    }
-  }
-  [feature = 'historic_citywalls'],
-  [feature = 'barrier_city_wall'] {
-    [zoom >= 15] {
-      line-width: 1;
-      line-color: lighten(#444, 30%);
-    }
-    [zoom >= 16] {
-      line-width: 1.5;
-    }
-    [zoom >= 17] {
-      line-width: 2;
-      barrier/line-width: 0.4;
-      barrier/line-color: #444;
-    }
-    [zoom >= 18] {
-      line-width: 3;
-    }
-    [zoom >= 19] {
-      line-width: 4;
-    }
-    [zoom >= 20] {
-      line-width: 5;
-    }
-  }
 }
-
+/*
 #tourism-boundary {
   [tourism = 'zoo'][zoom >= 10][way_pixels >= 750],
   [tourism = 'zoo'][zoom >= 17],
@@ -939,7 +857,8 @@
     }
   }
 }
-
+*/
+/*
 #text-line {
   [feature = 'natural_arete'][zoom >= 15],
   [feature = 'natural_cliff'][zoom >= 15],
@@ -957,3 +876,4 @@
     text-spacing: 400;
   }
 }
+*/
