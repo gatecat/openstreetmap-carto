@@ -587,7 +587,7 @@
     marker-fill: @amenity-blue;
     marker-clip: false;
     marker-width: 16;
-    marker-comp-op: darken;
+    // marker-comp-op: darken;
   }
 
   [feature = 'historic_archaeological_site'][zoom >= 16] {

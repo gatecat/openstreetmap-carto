@@ -79,39 +79,30 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
   }*/
   [admin_level = '2']::narrowline {
     [zoom >= 8] {
-      background/line-join: bevel;
-      background/line-color: white;
-      background/line-width: 0.6;
-      thin/line-join: bevel;
-      thin/line-color: @admin-boundaries-narrow;
-      thin/line-width: 0.6;
+      line-join: bevel;
+      line-color: @admin-boundaries-narrow;
+      line-width: 0.6;
     }
     [zoom >= 9] {
-      background/line-width: 0.8;
-      thin/line-width: 0.8;
+      line-width: 0.8;
     }
     [zoom >= 10] {
-      background/line-width: 1;
-      thin/line-width: 1;
-      thin/line-dasharray: 18,1,4,1;
+      line-width: 1;
+      line-dasharray: 18,1,4,1;
     }
     [zoom >= 11] {
-      background/line-width: 1.2;
-      thin/line-width: 1.2;
+      line-width: 1.2;
     }
     [zoom >= 12] {
-      background/line-width: 1.4;
-      thin/line-width: 1.4;
-      thin/line-dasharray: 27,1.5,6,1.5;
+      line-width: 1.4;
+      line-dasharray: 27,1.5,6,1.5;
     }
     [zoom >= 13] {
-      background/line-width: 1.6;
-      thin/line-width: 1.6;
+      line-width: 1.6;
     }
     [zoom >= 14] {
-      background/line-width: 1.8;
-      thin/line-width: 1.8;
-      thin/line-dasharray: 36,2,8,2;
+      line-width: 1.8;
+      line-dasharray: 36,2,8,2;
     }
   }
 
@@ -181,31 +172,24 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
   }*/
   [admin_level = '3']::narrowline {
     [zoom >= 10] {
-      background/line-join: bevel;
-      background/line-color: white;
-      background/line-width: 0.8;
-      thin/line-join: bevel;
-      thin/line-color: @admin-boundaries-narrow;
-      thin/line-width: 0.8;
-      thin/line-dasharray: 12,2,1.5,2;
+      line-join: bevel;
+      line-color: @admin-boundaries-narrow;
+      line-width: 0.8;
+      line-dasharray: 12,2,1.5,2;
     }
     [zoom >= 11] {
-      background/line-width: 1;
-      thin/line-width: 1;
+      line-width: 1;
     }
     [zoom >= 12] {
-      background/line-width: 1.2;
-      thin/line-width: 1.2;
-      thin/line-dasharray: 17,3,2,3;
+      line-width: 1.2;
+      line-dasharray: 17,3,2,3;
     }
     [zoom >= 13] {
-      background/line-width: 1.4;
-      thin/line-width: 1.4;
+      line-width: 1.4;
     }
     [zoom >= 14] {
-      background/line-width: 1.6;
-      thin/line-width: 1.6;
-      thin/line-dasharray: 23,4,3,4;
+      line-width: 1.6;
+      line-dasharray: 23,4,3,4;
     }
   }
 
@@ -224,82 +208,62 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
   }
   [admin_level = '4']::wideline {
     [zoom >= 4] {
-      background/line-join: bevel;
-      background/line-color: white;
-      background/line-width: 0.4;
       line-color: @admin-boundaries;
       line-join: bevel;
       line-width: 0.4;
       line-clip: false;
     }
     [zoom >= 5] {
-      background/line-width: 0.5;
       line-width: 0.5;
     }
     [zoom >= 6] {
-      background/line-width: 0.6;
       line-width: 0.6;
     }
     [zoom >= 7] {
-      background/line-width: 0.8;
       line-width: 0.8;
     }
     [zoom >= 8] {
-      background/line-width: 1;
       line-width: 1;
     }
     [zoom >= 9] {
-      background/line-width: 1.5;
       line-width: 1.5;
     }
     [zoom >= 10] {
-      background/line-width: 2;
       line-color: @admin-boundaries-wide;
       line-width: 2;
     }
     [zoom >= 11] {
-      background/line-width: 2.5;
       line-width: 2.8;
     }
     [zoom >= 12] {
-      background/line-width: 3;
       line-width: 3;
     }
     [zoom >= 13] {
-      background/line-width: 3.5;
       line-width: 3.5;
     }
     [zoom >= 14] {
-      background/line-width: 4;
       line-width: 4;
     }
   }*/
   [admin_level = '4']::narrowline {
     [zoom >= 10] {
-      background/line-join: bevel;
-      background/line-color: white;
-      background/line-width: 0.6;
-      thin/line-color: @admin-boundaries-narrow;
-      thin/line-width: 0.6;
-      thin/line-dasharray: 8,2,1.5,2,1.5,2;
+      line-color: @admin-boundaries-narrow;
+      line-width: 0.6;
+      line-dasharray: 8,2,1.5,2,1.5,2;
     }
     [zoom >= 11] {
-      background/line-width: 0.8;
-      thin/line-width: 0.8;
+      line-width: 0.8;
     }
     [zoom >= 12] {
-      background/line-width: 1;
-      thin/line-width: 1;
-      thin/line-dasharray: 12,3,2,3,2,3;
+      line-width: 1;
+      line-dasharray: 12,3,2,3,2,3;
     }
     [zoom >= 13] {
-      background/line-width: 1.2;
-      thin/line-width: 1.2;
+      line-width: 1.2;
     }
     [zoom >= 14] {
-      background/line-width: 1.4;
-      thin/line-width: 1.4;
-      thin/line-dasharray: 16,4,3,4,3,4;
+      line-width: 1.4;
+      line-dasharray: 16,4,3,4,3,4;
     }
   }
   ::firstline { opacity: 0.5; }
