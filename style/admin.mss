@@ -1,6 +1,6 @@
-@admin-boundaries: #8d618b; // Lch(47,30,327)
-@admin-boundaries-narrow: #845283; // Lch(42,35,327)
-@admin-boundaries-wide: #a37da1; // Lch(57,25,327)
+@admin-boundaries: #000; // Lch(47,30,327)
+@admin-boundaries-narrow: #000; // Lch(42,35,327)
+@admin-boundaries-wide: #000; // Lch(57,25,327)
 
 /* For performance reasons, the admin border layers are split into three groups
 for low, middle and high zoom levels.
@@ -13,7 +13,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
 #admin-low-zoom[zoom < 8],
 #admin-mid-zoom[zoom >= 8][zoom < 13],
 #admin-high-zoom[zoom >= 13] {
-  [admin_level = '2']::firstline {
+  /*[admin_level = '2']::firstline {
     [zoom >= 8] {
       background/line-join: bevel;
       background/line-color: white;
@@ -76,7 +76,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
       background/line-width: 8;
       line-width: 8;
     }
-  }
+  }*/
   [admin_level = '2']::narrowline {
     [zoom >= 8] {
       background/line-join: bevel;
@@ -115,7 +115,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
     }
   }
 
-  [admin_level = '3']::firstline {
+  /*[admin_level = '3']::firstline {
     [zoom >= 8] {
       background/line-join: bevel;
       background/line-color: white;
@@ -178,7 +178,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
       background/line-width: 5.5;
       line-width: 5.5;
     }
-  }
+  }*/
   [admin_level = '3']::narrowline {
     [zoom >= 10] {
       background/line-join: bevel;
@@ -209,7 +209,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
     }
   }
 
-  [admin_level = '4']::firstline {
+  /*[admin_level = '4']::firstline {
     [zoom >= 8] {
       background/line-join: bevel;
       background/line-color: white;
@@ -273,7 +273,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
       background/line-width: 4;
       line-width: 4;
     }
-  }
+  }*/
   [admin_level = '4']::narrowline {
     [zoom >= 10] {
       background/line-join: bevel;

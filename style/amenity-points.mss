@@ -68,6 +68,7 @@
     marker-file: url('symbols/amenity/pub.svg');
     marker-width: 16;
     marker-fill: @amenity-blue;
+    marker-comp-op: darken;
   }
 
   [feature = 'amenity_atm'][zoom >= 18] {
@@ -95,6 +96,7 @@
     marker-file: url('symbols/amenity/pub.svg');
     marker-width: 16;
     marker-fill: @amenity-blue;
+    marker-comp-op: darken;
   }
 
   [feature = 'amenity_internet_cafe'][zoom >= 17] {
@@ -531,10 +533,15 @@
 
   [feature = 'amenity_toilets'] {
     [zoom >= 14] {
-      marker-file: url('symbols/amenity/wc.svg');
-      marker-fill: @amenity-blue;
-      marker-clip: false;
-      marker-width: 16;
+    text-name: "WC";
+      text-size: @standard-font-size;
+      text-wrap-width: @standard-wrap-width;
+      text-line-spacing: @standard-line-spacing-size;
+      text-dy: 12;
+      text-fill: @amenity-blue;
+      text-face-name: @standard-font;
+      text-halo-radius: @standard-halo-radius;
+      text-halo-fill: rgba(255, 255, 255, 0.6);
     }
   }
 
@@ -580,6 +587,7 @@
     marker-fill: @amenity-blue;
     marker-clip: false;
     marker-width: 16;
+    marker-comp-op: darken;
   }
 
   [feature = 'historic_archaeological_site'][zoom >= 16] {
@@ -759,26 +767,16 @@
 
   [feature = 'natural_volcano'][zoom >= 11] {
     marker-file: url('symbols/natural/peak.svg');
-    marker-fill: #d40000;
-    marker-clip: false;
-  }
-
-  [feature = 'natural_saddle'][zoom >= 15] {
-    marker-file: url('symbols/natural/saddle.svg');
     marker-fill: @landform-color;
     marker-clip: false;
   }
 
-  [feature = 'mountain_pass'][zoom >= 15] {
-    marker-file: url('symbols/natural/saddle.svg');
-    marker-fill: @transportation-icon;
-    marker-clip: false;
-  }
 
   [feature = 'natural_spring'][zoom >= 14] {
     marker-file: url('symbols/natural/spring.svg');
     marker-fill: #00b2ec;
     marker-clip: false;
+    marker-width: 24;
   }
 /*
   [feature = 'natural_cave_entrance'][zoom >= 15] {
@@ -1221,14 +1219,13 @@
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
-    text-fill: darken(@landform-color, 30%);
+    text-fill: #000;
     [feature = 'natural_volcano'] { text-fill: #d40000; }
     [feature = 'mountain_pass'] { text-fill: @transportation-text; }
     text-dy: 7;
     [feature = 'tourism_viewpoint'] { text-dy: 11; }
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
-    text-halo-fill: @standard-halo-fill;
   }
 
   [feature = 'natural_cape'][zoom >= 14] {

@@ -8,14 +8,14 @@
 #water-barriers-point, #water-barriers-line, #water-barriers-poly {
   [waterway = 'dam'] {
     #water-barriers-poly[zoom >= 13] {
-      line-width: 2;
+      line-width: 1;
       line-color: @dam-line;
       line-join: round;
       line-cap: round;
       polygon-fill: @dam;
     }
     #water-barriers-line[zoom >= 13] {
-      line-width: 2;
+      line-width: 1;
       line-color: @dam-line;
       line-join: round;
       line-cap: round;
@@ -34,7 +34,7 @@
   [waterway = 'weir'] {
     #water-barriers-line[zoom >= 13] {
       line-color: @weir-line;
-      line-width: 2;
+      line-width: 1;
       line-dasharray: 2,2;
     }
     #water-barriers-point[zoom >= 17] {
@@ -51,7 +51,7 @@
   [waterway = 'lock_gate'] {
     #water-barriers-line[zoom >= 13] {
       line-color: @lock-gate-line;
-      line-width: 2;
+      line-width: 1;
     }
     #water-barriers-point[zoom >= 17] {
       marker-fill: @lock-gate;
