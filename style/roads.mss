@@ -946,58 +946,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
 }
 
 
-#junctions {
-  [highway = 'motorway_junction'] {
-    [zoom >= 11] {
-      text-name: "[ref]";
-      text-size: 10;
-      text-fill: @junction-text-color;
-      text-min-distance: 2;
-      text-face-name: @oblique-fonts;
-      text-halo-radius: @standard-halo-radius;
-      text-wrap-character: ";";
-      text-wrap-width: 2; // effectively break after every wrap character
-      text-line-spacing: -1.5; // -0.15 em
-      [zoom >= 13] {
-        ["name" != null]["ref" = null] {
-          text-name: "[name]";
-        }
-        ["name" != null]["ref" != null] {
-          text-name: [name] + "\n" + [ref];
-        }
-      }
-      [zoom >= 15] {
-        text-size: 11;
-        text-line-spacing: -1.65; // -0.15 em
-      }
-    }
-  }
-
-  [junction = 'yes'],
-  [highway = 'traffic_signals'] {
-    [zoom >= 15] {
-      text-name: "[name]";
-      text-size: 10;
-      text-fill: black;
-      text-face-name: @book-fonts;
-      text-halo-radius: @standard-halo-radius;
-      text-halo-fill: @standard-halo-fill;
-      text-wrap-width: 30;  // 3.0 em
-      text-line-spacing: -1.5; // -0.15 em
-      text-min-distance: 2;
-      [zoom >= 17] {
-        text-size: 11;
-        text-line-spacing: -1.65; // -0.15 em
-        /* Offset name on traffic_signals on zoomlevels where they are displayed
-        in order not to hide the text */
-        [highway = 'traffic_signals'] {
-          text-dy: 9;
-        }
-      }
-    }
-  }
-}
-
 #bridge-text  {
   [man_made = 'bridge'] {
     [zoom >= 12][way_pixels > 125][way_pixels <= 768000] {

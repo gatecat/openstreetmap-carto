@@ -54,6 +54,7 @@ Stylesheet:
   - style/admin.mss
   - style/contours.mss
   - style/tourism.mss
+  - style/hillshade.mss
 Layer:
   - id: landcover-low-zoom
     geometry: polygon
@@ -585,6 +586,14 @@ Layer:
       cache-features: true
       group-by: layernotnull
       minzoom: 10
+  - id: hillshade
+    geometry: raster
+    <<: *extents
+    Datasource:
+      file: /home/gatecat/osm_contour/hillshade_pfronten.tif
+      type: gdal
+    layer: null
+    srs-name: "3857"
   - id: landuse-overlay
     geometry: polygon
     <<: *extents

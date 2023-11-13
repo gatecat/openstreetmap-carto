@@ -454,7 +454,9 @@
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
     [zoom >= 13] {
-      polygon-pattern-file: url('symbols/rock_overlay.png');
+      polygon-pattern-file: url('symbols/rock.svg');
+      polygon-pattern-alignment: global;
+      polygon-opacity: 0.5;
       [way_pixels >= 4]  { polygon-pattern-gamma: 0.75; }
       [way_pixels >= 64] { polygon-pattern-gamma: 0.3;  }
     }
@@ -527,7 +529,7 @@
       polygon-fill: @grass;
       [feature = 'wetland_saltmarsh'][zoom >= 13] {
         polygon-pattern-file: url('symbols/salt-dots-2.png');
-        polygon-pattern-alignment: global;
+        polygon-pattern-alignment: local;
         [way_pixels >= 4]  { polygon-pattern-gamma: 0.75; }
         [way_pixels >= 64] { polygon-pattern-gamma: 0.3;  }
       }
@@ -697,8 +699,8 @@
   }
 
   [int_wetland != null][zoom >= 10] {
-    polygon-pattern-file: url('symbols/wetland.png');
-    polygon-pattern-alignment: global;
+    polygon-pattern-file: url('symbols/wetland_explorer.svg');
+    polygon-pattern-alignment: local;
   }
   [natural = 'reef'][zoom >= 10] {
     polygon-pattern-file: url('symbols/reef.png');
@@ -709,25 +711,25 @@
     [int_wetland = 'saltmarsh'],
     [int_wetland = 'wet_meadow'] {
       polygon-pattern-file: url('symbols/wetland_marsh_explorer.svg');
-      polygon-pattern-alignment: global;
+      polygon-pattern-alignment: local;
     }
     [int_wetland = 'reedbed'] {
       polygon-pattern-file: url('symbols/wetland_explorer.svg');
-      polygon-pattern-alignment: global;
+      polygon-pattern-alignment: local;
     }
     [int_wetland = 'mangrove'] {
       polygon-pattern-file: url('symbols/wetland_explorer.svg');
-      polygon-pattern-alignment: global;
+      polygon-pattern-alignment: local;
     }
     [int_wetland = 'swamp'] {
       polygon-pattern-file: url('symbols/wetland_explorer.svg');
-      polygon-pattern-alignment: global;
+      polygon-pattern-alignment: local;
     }
     [int_wetland = 'bog'],
     [int_wetland = 'fen'],
     [int_wetland = 'string_bog'] {
       polygon-pattern-file: url('symbols/wetland_explorer.svg');
-      polygon-pattern-alignment: global;
+      polygon-pattern-alignment: local;
     }
     [landuse = 'salt_pond'] {
       polygon-pattern-file: url('symbols/salt_pond.png');
