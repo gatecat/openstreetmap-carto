@@ -92,7 +92,7 @@
   [feature = 'leisure_playground'][zoom >= 13],
   [feature = 'leisure_fitness_station'][zoom >= 13] {
     polygon-fill: @leisure;
-    [zoom >= 15] {
+    [zoom >= 14] {
       line-color: darken(@leisure, 60%);
       line-width: 0.3;
     }
@@ -228,7 +228,7 @@
   [feature = 'landuse_religious'][zoom >= 13] {
     polygon-fill: @place_of_worship;
     polygon-clip: false;
-    [zoom >= 15] {
+    [zoom >= 14] {
       line-color: @place_of_worship_outline;
       line-width: 0.3;
       line-clip: false;
@@ -374,14 +374,14 @@
 
   [feature = 'man_made_wastewater_plant'] {
     polygon-fill: @industrial;
-    [zoom >= 15] {
+    [zoom >= 14] {
       polygon-fill: @wastewater_plant;
     }
   }
 
   [feature = 'man_made_water_works'] {
     polygon-fill: @industrial;
-    [zoom >= 15] {
+    [zoom >= 14] {
       polygon-fill: @water_works;
     }
   }
@@ -400,7 +400,7 @@
   [feature = 'power_generator'][zoom >= 10],
   [feature = 'power_substation'][zoom >= 13] {
     polygon-fill: @industrial;
-    [zoom >= 15] {
+    [zoom >= 14] {
       polygon-fill: @power;
     }
     [zoom >= 16] {
@@ -418,7 +418,7 @@
     polygon-fill: @built-up-lowzoom;
     [zoom >= 12] { polygon-fill: @built-up-z12; }
     [zoom >= 13] { polygon-fill: @commercial; }
-    [zoom >= 15] {
+    [zoom >= 14] {
       line-width: 0.5;
       line-color: @commercial-line;
     }
@@ -569,7 +569,7 @@
     line-opacity: 0.24;
     line-width: 1.0;
     line-offset: -0.5;
-    [zoom >= 15] {
+    [zoom >= 14] {
       line-width: 2;
       line-offset: -1.0;
     }
@@ -581,7 +581,7 @@
   [feature = 'amenity_taxi'] {
     [zoom >= 14] {
       polygon-fill: @parking;
-      [zoom >= 15] {
+      [zoom >= 14] {
         line-width: 0.3;
         line-color: @parking-outline;
       }
@@ -602,8 +602,8 @@
   }
 
   [feature = 'aeroway_aerodrome'][zoom >= 10],
-  [feature = 'amenity_ferry_terminal'][zoom >= 15],
-  [feature = 'amenity_bus_station'][zoom >= 15] {
+  [feature = 'amenity_ferry_terminal'][zoom >= 14],
+  [feature = 'amenity_bus_station'][zoom >= 14] {
     polygon-fill: @transportation-area;
     line-width: 0.2;
     line-color: saturate(darken(@transportation-area, 40%), 20%);
@@ -647,7 +647,7 @@
 
   [feature = 'leisure_track'][zoom >= 10] {
     polygon-fill: @track;
-    [zoom >= 15] {
+    [zoom >= 14] {
       line-width: 0.5;
       line-color: desaturate(darken(@track, 20%), 10%);
     }
@@ -657,7 +657,7 @@
 
   [feature = 'leisure_pitch'][zoom >= 10] {
     polygon-fill: @pitch;
-    [zoom >= 15] {
+    [zoom >= 14] {
       line-width: 0.5;
       line-color: desaturate(darken(@pitch, 20%), 10%);
     }
@@ -779,7 +779,7 @@
     line-opacity: 0.24;
     line-width: 1.0;
     line-offset: -0.5;
-    [zoom >= 15] {
+    [zoom >= 14] {
       line-width: 2;
       line-offset: -1.0;
     }

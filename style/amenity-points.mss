@@ -460,7 +460,7 @@
   }
 */
 
-  [feature = 'amenity_hospital'][zoom >= 15] {
+  [feature = 'amenity_hospital'][zoom >= 14] {
     marker-file: url('symbols/amenity/hospital.svg');
     marker-fill: @health-color;
     marker-clip: false;
@@ -639,7 +639,7 @@
     marker-clip: false;
   }
 */
-  [feature = 'leisure_golf_course'][zoom >= 15] {
+  [feature = 'leisure_golf_course'][zoom >= 14] {
     marker-file: url('symbols/leisure/golf.svg');
     marker-fill: @amenity-blue;
     marker-clip: false;
@@ -747,13 +747,13 @@
     }
   }
 
-  [feature = 'amenity_ferry_terminal'][zoom >= 15] {
+  [feature = 'amenity_ferry_terminal'][zoom >= 14] {
     marker-file: url('symbols/amenity/ferry.svg');
     marker-clip: false;
     marker-fill: @airtransport;
   }
 
-  [feature = 'man_made_lighthouse'][zoom >= 15] {
+  [feature = 'man_made_lighthouse'][zoom >= 14] {
     marker-file: url('symbols/man_made/lighthouse.svg');
     marker-clip: false;
     marker-fill: @man-made-icon;
@@ -791,8 +791,8 @@
   }
 
   [feature = 'power_generator']['generator:source' = 'wind'] {
-    [zoom >= 15][location != 'rooftop'][location != 'roof'],
-    [zoom >= 15][location = null],
+    [zoom >= 14][location != 'rooftop'][location != 'roof'],
+    [zoom >= 14][location = null],
     [zoom >= 19] {
       marker-file: url('symbols/man_made/generator_wind.svg');
       marker-fill: @man-made-icon;
@@ -860,7 +860,7 @@
   }
 
   [feature = 'railway_level_crossing'][zoom >= 14]::railway,
-  [feature = 'railway_crossing'][zoom >= 15]::railway{
+  [feature = 'railway_crossing'][zoom >= 14]::railway{
     marker-file: url('symbols/barrier/level_crossing.svg');
     marker-fill: #4d4d4d;
     marker-clip: false;

@@ -14,7 +14,7 @@
   [zoom >= 14] {
     polygon-fill: @building-low-zoom;
     polygon-clip: false;
-    [zoom >= 15] {
+    [zoom >= 14] {
       polygon-fill: @building-fill;
       line-color: @building-line;
       line-width: .375;
