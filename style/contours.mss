@@ -46,7 +46,7 @@
   text-placement: line;
   text-fill: @contours-text;
   text-halo-fill: @standard-halo-fill;
-  text-halo-radius: 0;
+  text-halo-radius: 0.5;
   [zoom >= 12][zoom < 14] {
     text-spacing: 6000;
     text-size: 8;

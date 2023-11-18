@@ -1,4 +1,4 @@
 #hillshade {
   raster-scaling: bilinear;
-  raster-opacity: 0.1;
+  raster-opacity: 0.2;
 }

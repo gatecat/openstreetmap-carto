@@ -75,7 +75,7 @@
     }
 
     water/line-color: @water-line;
-    water/line-width: 2;
+    water/line-width: 2.5;
     water/line-cap: round;
     water/line-join: round;
 
@@ -102,7 +102,7 @@
         background/line-width: 1.5;
         background/line-color: @land-color;
       }
-      water/line-width: 1;
+      water/line-width: 1.2;
       water/line-color: @water-line;
 
       [bridge = 'yes'] {
@@ -132,13 +132,13 @@
       text-placement: line;
       text-fill: @water-text;
       text-spacing: 400;
-      text-size: 10;
+      text-size: 12;
   }
 
   [lock != 'yes'][int_tunnel != 'yes'][int_tunnel != "yes"] {
     [waterway = 'river'][zoom >= 13] {
       text-name: "[name]";
-      text-size: 10;
+      text-size: 12;
       text-face-name: @oblique-fonts;
       text-fill: @water-text;
       text-spacing: 400;
@@ -150,7 +150,7 @@
 
     [waterway = 'canal'][zoom >= 13] {
       text-name: "[name]";
-      text-size: 10;
+      text-size: 12;
       text-face-name: @oblique-fonts;
       text-fill: @water-text;
       text-placement: line;
@@ -235,7 +235,7 @@
         text-line-spacing: -0.95; // -0.05 em
       }
       text-fill: @water-text;
-      text-face-name: @oblique-fonts;
+      text-face-name: @book-fonts;
       text-placement: interior;
     }
   }

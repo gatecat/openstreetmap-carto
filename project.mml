@@ -152,8 +152,8 @@ Layer:
       table: |-
         (SELECT
             way
-         FROM contour
-         WHERE height::int % 50 != 0 AND height::int % 200 != 0
+         FROM contour_hd
+         WHERE height::int % 20 = 0 AND  height::int % 50 != 0 AND height::int % 200 != 0
         ) AS contours10
     properties:
       minzoom: 14
@@ -165,8 +165,8 @@ Layer:
       table: |-
         (SELECT
             way
-         FROM contour
-         WHERE height::int % 50 = 0 AND height::int % 200 != 0
+         FROM contour_hd
+         WHERE height::int % 100 = 0 AND height::int % 200 != 0 
         ) AS contours50
     properties:
       minzoom: 14
@@ -178,8 +178,8 @@ Layer:
       table: |-
         (SELECT
             way
-         FROM contour
-         WHERE height::int % 200 = 0
+         FROM contour_hd
+         WHERE height::int % 200 = 0 AND ST_Length(way) > 20
         ) AS contours200
     properties:
       minzoom: 12
@@ -191,7 +191,7 @@ Layer:
       table: |-
         (SELECT
             way, height
-         FROM contour
+         FROM contour_hd
          WHERE height::int % 50 = 0 AND height::int % 200 != 0
          ) AS contours_text50
     properties:
@@ -204,7 +204,7 @@ Layer:
       table: |-
         (SELECT
             way, height
-         FROM contour
+         FROM contour_hd
          WHERE height::int % 200 = 0
         ) AS contours_text200
     properties:
@@ -1163,7 +1163,7 @@ Layer:
     geometry: raster
     <<: *extents
     Datasource:
-      file: /home/gatecat/osm_contour/hillshade_pfronten.tif
+      file: /home/gatecat/osm_contour/shade_pfronten_hd.tif
       type: gdal
     layer: null
     srs-name: "3857"
