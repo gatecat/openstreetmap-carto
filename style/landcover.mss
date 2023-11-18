@@ -799,13 +799,11 @@
   }
 }
 
+/*
 #cliffs {
   [natural = 'cliff'][zoom >= 13] {
     line-pattern-file: url('symbols/cliff_explorer.svg');
     line-pattern-opacity: 1.0;
-    /* [zoom >= 15] {
-      line-pattern-file: url('symbols/cliff2.svg');
-    } */
   }
   [natural = 'ridge'][zoom >= 14] {
     line-pattern-file: url('symbols/ridge-mid.svg');
@@ -823,6 +821,7 @@
     line-pattern-file: url('symbols/embankment.svg');
   }
 }
+*/
 
 #barriers {
   [zoom >= 15] {

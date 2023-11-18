@@ -56,8 +56,8 @@
 
 #water-lines,
 #waterway-bridges {
-  [waterway = 'canal'][zoom >= 12],
-  [waterway = 'river'][zoom >= 12] {
+  [waterway = 'canal'][zoom >= 12][int_tunnel != "yes"],
+  [waterway = 'river'][zoom >= 12][int_tunnel != "yes"] {
     // the additional line of land color is used to provide a background for dashed casings
     [int_tunnel = 'yes'] {
       background/line-color: @land-color;
@@ -79,7 +79,7 @@
     water/line-cap: round;
     water/line-join: round;
 
-    [int_tunnel = 'yes'] {
+/*    [int_tunnel = 'yes'] {
       [zoom >= 13] { background/line-width: 3; }
 
       water/line-dasharray: 4,2;
@@ -89,14 +89,14 @@
       water/line-join: miter;
       tunnelfill/line-color: #f3f7f7;
       tunnelfill/line-width: 1;
-    }
+    }*/
   }
 
-  [waterway = 'stream'],
-  [waterway = 'ditch'],
-  [waterway = 'drain'] {
-    [int_intermittent != 'yes'][zoom >= 14],
-    [zoom >= 14] {
+  [waterway = 'stream'][int_tunnel != "yes"],
+  [waterway = 'ditch'][int_tunnel != "yes"],
+  [waterway = 'drain'][int_tunnel != "yes"] {
+    [int_tunnel != "yes"][int_intermittent != 'yes'][zoom >= 14],
+    [int_tunnel != "yes"][zoom >= 14] {
       // the additional line of land color is used to provide a background for dashed casings
       [int_tunnel = 'yes'] {
         background/line-width: 1.5;
@@ -126,28 +126,25 @@
 }
 
 #water-lines-text {
-  [lock = 'yes'][zoom >= 17] {
+  [lock = 'yes'][zoom >= 17][int_tunnel != "yes"] {
       text-name: "[lock_name]";
       text-face-name: @oblique-fonts;
       text-placement: line;
       text-fill: @water-text;
       text-spacing: 400;
       text-size: 10;
-      text-halo-radius: @standard-halo-radius;
-      text-halo-fill: @standard-halo-fill;
   }
 
-  [lock != 'yes'][int_tunnel != 'yes'] {
+  [lock != 'yes'][int_tunnel != 'yes'][int_tunnel != "yes"] {
     [waterway = 'river'][zoom >= 13] {
       text-name: "[name]";
       text-size: 10;
       text-face-name: @oblique-fonts;
       text-fill: @water-text;
-      text-halo-radius: @standard-halo-radius;
-      text-halo-fill: @standard-halo-fill;
       text-spacing: 400;
       text-placement: line;
       text-repeat-distance: @waterway-text-repeat-distance;
+      text-dy: 8;
       [zoom >= 14] { text-size: 12; }
     }
 
@@ -156,10 +153,9 @@
       text-size: 10;
       text-face-name: @oblique-fonts;
       text-fill: @water-text;
-      text-halo-radius: @standard-halo-radius;
-      text-halo-fill: @standard-halo-fill;
       text-placement: line;
       text-repeat-distance: @waterway-text-repeat-distance;
+      text-dy: 8;
     }
 
     [waterway = 'stream'][zoom >= 14] {
@@ -167,8 +163,6 @@
       text-size: 10;
       text-face-name: @oblique-fonts;
       text-fill: @water-text;
-      text-halo-radius: @standard-halo-radius;
-      text-halo-fill: @standard-halo-fill;
       text-spacing: 600;
       text-placement: line;
       text-vertical-alignment: middle;
@@ -183,8 +177,6 @@
         text-size: 10;
         text-face-name: @oblique-fonts;
         text-fill: @water-text;
-        text-halo-radius: @standard-halo-radius;
-        text-halo-fill: @standard-halo-fill;
         text-spacing: 600;
         text-placement: line;
         text-vertical-alignment: middle;
@@ -199,8 +191,6 @@
     text-size: 10;
     text-face-name: @oblique-fonts;
     text-fill: @water-text;
-    text-halo-radius: @standard-halo-radius;
-    text-halo-fill: @standard-halo-fill;
     text-max-char-angle-delta: 15;
     text-spacing: 400;
     text-placement: line;
@@ -246,8 +236,6 @@
       }
       text-fill: @water-text;
       text-face-name: @oblique-fonts;
-      text-halo-radius: @standard-halo-radius;
-      text-halo-fill: @standard-halo-fill;
       text-placement: interior;
     }
   }

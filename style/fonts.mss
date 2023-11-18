@@ -56,7 +56,7 @@ Map {
 /*
 A regular style.
 */
-@book-fonts:    "Gill Sans Regular";
+@book-fonts:    "Gill Sans Medium";
 
 /*
 A bold style is available for almost all scripts. Bold text is heavier than
@@ -69,4 +69,4 @@ Italics are only available for the (Latin-Greek-Cyrillic) base font, not the oth
 (Apart from that, only Noto Tamil has an Italic style, but just for Serif, not for Sans.)
 For a considerable number of labels this style will make no difference to the regular style.
 */
-@oblique-fonts: "Gill Sans Italic", @book-fonts;
+@oblique-fonts: "Gill Sans Medium Italic", @book-fonts;

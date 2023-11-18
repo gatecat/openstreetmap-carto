@@ -461,9 +461,15 @@
 */
 
   [feature = 'amenity_hospital'][zoom >= 14] {
-    marker-file: url('symbols/amenity/hospital.svg');
-    marker-fill: @health-color;
-    marker-clip: false;
+      text-name: "Hosp";
+      text-size: @standard-font-size;
+      text-wrap-width: @standard-wrap-width;
+      text-line-spacing: @standard-line-spacing-size;
+      text-dy: 8;
+      text-fill: #000;
+      text-face-name: @standard-font;
+      text-halo-radius: @standard-halo-radius;
+      text-halo-fill: rgba(255, 255, 255, 0.6);
   }
 
 
@@ -533,7 +539,7 @@
 
   [feature = 'amenity_toilets'] {
     [zoom >= 14] {
-    text-name: "WC";
+      text-name: "WC";
       text-size: @standard-font-size;
       text-wrap-width: @standard-wrap-width;
       text-line-spacing: @standard-line-spacing-size;
@@ -2148,6 +2154,7 @@
     }
   }
 
+/*
   [feature = 'aeroway_helipad'][zoom >= 16] {
     text-name: "[name]";
     text-size: @standard-font-size;
@@ -2177,6 +2184,7 @@
       text-halo-fill: @standard-halo-fill;
     }
   }
+*/
 
   [feature = 'amenity_ferry_terminal'][zoom >= 15] {
     text-name: "[name]";

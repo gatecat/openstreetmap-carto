@@ -488,6 +488,7 @@ Layer:
             building,
             amenity,
             aeroway,
+            tourism,
             aerialway,
             tags->'public_transport' as public_transport
           FROM planet_osm_polygon
@@ -586,14 +587,6 @@ Layer:
       cache-features: true
       group-by: layernotnull
       minzoom: 10
-  - id: hillshade
-    geometry: raster
-    <<: *extents
-    Datasource:
-      file: /home/gatecat/osm_contour/hillshade_pfronten.tif
-      type: gdal
-    layer: null
-    srs-name: "3857"
   - id: landuse-overlay
     geometry: polygon
     <<: *extents
@@ -1166,6 +1159,14 @@ Layer:
         ) AS golf_line
     properties:
       minzoom: 16
+  - id: hillshade
+    geometry: raster
+    <<: *extents
+    Datasource:
+      file: /home/gatecat/osm_contour/hillshade_pfronten.tif
+      type: gdal
+    layer: null
+    srs-name: "3857"
   - id: necountries
     geometry: linestring
     <<: *extents
