@@ -2281,11 +2281,12 @@ Layer:
             CASE WHEN tunnel IN ('yes', 'culvert') 
               OR waterway = 'canal' AND tunnel = 'flooded'
               THEN 'yes' ELSE 'no' END AS int_tunnel
-          FROM planet_osm_line
+          FROM planet_osm_line l
           WHERE (waterway IN ('river', 'canal', 'stream', 'drain', 'ditch')
                  OR "natural" IN ('bay', 'strait'))
             AND (tunnel IS NULL OR tunnel != 'culvert')
             AND name IS NOT NULL
+            AND NOT EXISTS(SELECT ALL way, "natural", name FROM planet_osm_polygon p WHERE "natural" = 'water' AND ST_Intersects(p.way, l.way) AND (p.name IS NULL OR p.name != l.name) )
           ORDER BY COALESCE(layer,0)
         ) AS water_lines_text
     properties:
