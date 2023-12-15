@@ -698,6 +698,12 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         line-color: #000000;
         line-dasharray: 2,2;
         line-join: bevel;
+        [piste = 'sled'] {
+          marker-file: url('symbols/amenity/sled.svg');
+          marker-width: 16;
+          marker-fill: #00b2ec;
+          marker-comp-op: darken;
+        }
       }
     }
 
@@ -708,6 +714,12 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         line-width: @track-width - 2 * @casing-width;
         line-color: #ffffff;
         line-join: bevel;
+        [piste = 'sled'] {
+          marker-file: url('symbols/amenity/sled.svg');
+          marker-width: 16;
+          marker-fill: #00b2ec;
+          marker-comp-op: darken;
+        }
       }
     }
 

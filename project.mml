@@ -518,6 +518,7 @@ Layer:
             access,
             construction,
             service,
+            '' as piste,
             link,
             layernotnull
           FROM ( -- subselect that contains both roads and rail
@@ -754,6 +755,7 @@ Layer:
             access,
             construction,
             service,
+            piste,
             link,
             layernotnull
           FROM ( -- subselect that contains both roads and rail/aero
@@ -777,6 +779,7 @@ Layer:
                   WHEN service IN ('parking_aisle', 'drive-through', 'driveway') OR leisure IN ('slipway') THEN 'INT-minor'::text
                   ELSE 'INT-normal'::text
                 END AS service,
+                CASE WHEN ST_Length(way) > 800 THEN tags->'piste:type' ELSE '' END AS piste,
                 CASE
                   WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary_link') THEN 'yes'
                   ELSE 'no'
@@ -812,6 +815,7 @@ Layer:
                 END AS access,
                 construction,
                 CASE WHEN service IN ('parking_aisle', 'drive-through', 'driveway') OR leisure IN ('slipway') THEN 'INT-minor'::text ELSE 'INT-normal'::text END AS service,
+                'no' AS piste,
                 'no' AS link,
                 COALESCE(layer,0) AS layernotnull,
                 osm_id,
@@ -986,6 +990,7 @@ Layer:
             access,
             construction,
             service,
+            '' as piste,
             link,
             layernotnull
           FROM ( -- subselect that contains both roads and rail/aero
