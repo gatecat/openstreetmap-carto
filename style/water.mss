@@ -102,13 +102,13 @@
         background/line-width: 1.5;
         background/line-color: @land-color;
       }
-      water/line-width: 1.2;
+      water/line-width: 0.8;
       water/line-color: @water-line;
 
       [bridge = 'yes'] {
         bridgecasing/line-color: black;
         bridgecasing/line-join: round;
-        bridgecasing/line-width: 1.5;
+        bridgecasing/line-width: 1.2;
         bridgeglow/line-color: white;
         bridgeglow/line-join: round;
         bridgeglow/line-width: 0.5;
