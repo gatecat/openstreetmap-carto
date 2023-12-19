@@ -12,6 +12,7 @@
       marker-width: 6;
       marker-height: 6;
       marker-clip: false;
+      marker-ignore-placement: true;
   }
 
   [railway = 'halt'] {
@@ -23,7 +24,7 @@
       marker-width: 6;
       marker-height: 6;
       marker-clip: false;
-
+      marker-ignore-placement: true;
     }
   }
 
@@ -36,6 +37,7 @@
       marker-width: 4;
       marker-height: 4;
       marker-clip: false;
+      marker-ignore-placement: true;
     }
   }
 

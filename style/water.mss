@@ -32,7 +32,8 @@
       [way_pixels >= 64] { polygon-gamma: 0.6; }
     }
     [int_intermittent = 'yes'] {
-      polygon-pattern-file: url('patterns/intermittent_water.svg');
+      polygon-pattern-file: url('symbols/wetland_explorer.svg');
+      polygon-pattern-alignment: local;
       [way_pixels >= 4] { polygon-pattern-gamma: 0.75; }
       [way_pixels >= 64] { polygon-pattern-gamma: 0.6; }
     }

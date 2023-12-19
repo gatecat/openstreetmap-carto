@@ -221,7 +221,9 @@
       [zoom >= 13] {
         line-color: @residential-casing;
         line-width: @residential-width;
-        line-dasharray: 3,3;
+        [feature = 'highway_residential'] {
+          line-dasharray: 3,3;
+        }
         #tunnels {
           line-dasharray: 4,4;
         }

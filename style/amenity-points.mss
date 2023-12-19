@@ -536,7 +536,7 @@
 
 
 
-
+/*
   [feature = 'amenity_toilets'] {
     [zoom >= 14] {
       text-name: "WC";
@@ -550,6 +550,7 @@
       text-halo-fill: rgba(255, 255, 255, 0.6);
     }
   }
+*/
 
 /*
   [feature = 'amenity_drinking_water'][zoom >= 17] {
@@ -649,12 +650,14 @@
     marker-file: url('symbols/leisure/golf.svg');
     marker-fill: @amenity-blue;
     marker-clip: false;
+    marker-width: 16;
   }
 
   [feature = 'tourism_picnic_site'][zoom >= 14] {
     marker-file: url('symbols/tourism/picnic.svg');
     marker-fill: @amenity-blue;
     marker-clip: false;
+    marker-width: 14;
   }
 /*
   [feature = 'leisure_picnic_table'][zoom >= 17] {
@@ -1218,7 +1221,6 @@
 
   [feature = 'natural_peak'][zoom >= 13],
   [feature = 'natural_volcano'][zoom >= 13],
-  [feature = 'natural_saddle'][zoom >= 15],
   [feature = 'mountain_pass'][zoom >= 15],
   [feature = 'tourism_viewpoint'][zoom >= 16] {
     text-name: "[name]";
@@ -1230,6 +1232,7 @@
     [feature = 'tourism_viewpoint'] { text-dy: 11; }
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
+    [score = 2962] { text-allow-overlap: true; }
   }
 
   [feature = 'natural_cape'][zoom >= 14] {
