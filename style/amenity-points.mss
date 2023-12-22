@@ -48,18 +48,9 @@
   [feature = 'tourism_alpine_hut'][amenity != 'restaurant'][zoom >= 13],
   [feature = 'tourism_wilderness_hut'][zoom >= 13],
   [feature = 'amenity_shelter'][zoom >= 16] {
-    marker-file: url('symbols/amenity/shelter.svg');
-    [feature = 'tourism_wilderness_hut'] {
-      marker-file: url('symbols/square.svg');
-    }
-    [feature = 'tourism_alpine_hut'] {
-      marker-file: url('symbols/square.svg');
-    }
-    [feature = 'amenity_shelter'] {
-      marker-fill: @man-made-icon;
-    }
-    marker-width: 6;
-    marker-fill: @accommodation-icon;
+    marker-file: url('symbols/amenity/hut.svg');
+    marker-width: 14;
+    marker-fill: @amenity-blue;
     marker-clip: false;
   }
 
@@ -782,10 +773,18 @@
 
 
   [feature = 'natural_spring'][zoom >= 14] {
-    marker-file: url('symbols/natural/spring.svg');
-    marker-fill: #00b2ec;
+    marker-type: ellipse;
+    marker-line-color: #00b2ec;
+    marker-line-width: 0.6;
+    marker-width: 4;
+    marker-height: 4;
     marker-clip: false;
-    marker-width: 24;
+    marker-fill-opacity: 0;
+    text-name: "Spr";
+    text-dx: 4;
+    text-size: 10;
+    text-fill: #00b2ec;
+    text-face-name: @book-fonts;
   }
 /*
   [feature = 'natural_cave_entrance'][zoom >= 15] {

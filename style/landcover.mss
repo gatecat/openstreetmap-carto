@@ -456,7 +456,7 @@
     [zoom >= 13] {
       polygon-pattern-file: url('symbols/rock.svg');
       polygon-pattern-alignment: global;
-      polygon-opacity: 0.5;
+      polygon-opacity: 0.3;
       [way_pixels >= 4]  { polygon-pattern-gamma: 0.75; }
       [way_pixels >= 64] { polygon-pattern-gamma: 0.3;  }
     }
