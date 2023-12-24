@@ -205,7 +205,7 @@ Layer:
         (SELECT
             way, height
          FROM contour_hd
-         WHERE height::int % 200 = 0
+         WHERE height::int % 200 = 0 AND ( ST_Length(way) > 500 or height >= 1000 )
         ) AS contours_text200
     properties:
       minzoom: 12

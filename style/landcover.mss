@@ -755,6 +755,12 @@
     [natural = 'scrub'] {
       polygon-pattern-file: url('symbols/scrub_explorer.svg');
       polygon-pattern-alignment: global;
+      opacity: 0.6;
+    }
+    [natural = 'heath'] {
+      polygon-pattern-file: url('symbols/heath_explorer.svg');
+      polygon-pattern-alignment: global;
+      opacity: 0.6;
     }
   }
 

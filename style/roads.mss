@@ -54,10 +54,10 @@
 @tunnel-casing: grey;
 @bridge-casing: black;
 
-@motorway-tunnel-fill: lighten(@motorway-fill, 10%);
-@trunk-tunnel-fill: lighten(@trunk-fill, 10%);
-@primary-tunnel-fill: lighten(@primary-fill, 10%);
-@secondary-tunnel-fill: lighten(@secondary-fill, 5%);
+@motorway-tunnel-fill: lighten(@motorway-fill, 20%);
+@trunk-tunnel-fill: lighten(@trunk-fill, 20%);
+@primary-tunnel-fill: lighten(@primary-fill, 20%);
+@secondary-tunnel-fill: lighten(@secondary-fill, 20%);
 @tertiary-tunnel-fill: lighten(@tertiary-fill, 5%);
 @residential-tunnel-fill: darken(@residential-fill, 5%);
 @living-street-tunnel-fill: lighten(@living-street-fill, 3%);
@@ -706,6 +706,16 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           marker-fill: #00b2ec;
           marker-comp-op: darken;
         }
+      }
+    }
+
+    [feature = 'highway_via_ferrata'] {
+      [zoom >= 14] {
+        line-width: @path-width;
+        line-color: #000000;
+        line-dasharray: 0.5,3.5;
+        line-join: bevel;
+        line-cap: round;
       }
     }
 
