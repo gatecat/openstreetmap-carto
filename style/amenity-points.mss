@@ -1233,7 +1233,7 @@
     [feature = 'tourism_viewpoint'] { text-dy: 11; }
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
-    [score = 2962], [score = 2473] { text-allow-overlap: true; }
+    [score = 2962], [score = 2471] { text-allow-overlap: true; }
   }
 
   [feature = 'natural_cape'][zoom >= 14] {
