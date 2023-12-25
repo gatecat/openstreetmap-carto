@@ -201,10 +201,12 @@
     marker-fill: @memorials;
   }
 
-  [feature = 'tourism_camp_site'][zoom >= 16] {
+  [feature = 'tourism_camp_site'][zoom >= 14] {
     marker-file: url('symbols/tourism/camping.svg');
-    marker-fill: @accommodation-icon;
-    marker-clip: false;
+    marker-fill: @amenity-blue;
+    marker-clip: true;
+    marker-width: 14;
+    marker-comp-op: darken;
   }
 
   // Ford tagging on points - ford on lines is defined later
@@ -1231,7 +1233,7 @@
     [feature = 'tourism_viewpoint'] { text-dy: 11; }
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
-    [score = 2962] { text-allow-overlap: true; }
+    [score = 2962], [score = 2473] { text-allow-overlap: true; }
   }
 
   [feature = 'natural_cape'][zoom >= 14] {
