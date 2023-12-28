@@ -403,13 +403,6 @@
         text-line-spacing: -0.55; // -0.05 em
         text-margin: 7.7; // 0.7 em
       }
-      [zoom >= 15] {
-        text-fill: @placenames-light;
-        text-size: 12;
-        text-wrap-width: 60; // 5.0 em
-        text-line-spacing: -0.60; // -0.05 em
-        text-margin: 8.4; // 0.7 em
-      }
     }
   }
   [place = 'hamlet'] {

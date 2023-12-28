@@ -1222,7 +1222,7 @@
 
   [feature = 'natural_peak'][zoom >= 13],
   [feature = 'natural_volcano'][zoom >= 13],
-  [feature = 'mountain_pass'][zoom >= 15],
+  [feature = 'mountain_pass'][zoom >= 16],
   [feature = 'tourism_viewpoint'][zoom >= 16] {
     text-name: "[name]";
     text-size: @standard-font-size;
@@ -1265,7 +1265,7 @@
   [feature = 'power_generator']['generator:source' = 'wind'][location = null][zoom >= 17],
   [feature = 'power_generator']['generator:source' = 'wind'][zoom >= 19],
   [feature = 'historic_city_gate'][zoom >= 17],
-  [feature = 'natural_cave_entrance'][zoom >= 15],
+  [feature = 'natural_cave_entrance'][zoom >= 16],
   [feature = 'man_made_mast'][zoom >= 18],
   [feature = 'man_made_tower'][zoom >= 17],
   [feature = 'man_made_storage_tank'][zoom >= 18],
@@ -1341,7 +1341,7 @@
   }
 
   [feature = 'leisure_miniature_golf'][zoom >= 17],
-  [feature = 'leisure_golf_course'][zoom >= 15] {
+  [feature = 'leisure_golf_course'][zoom >= 16] {
     text-name: "[name]";
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
@@ -1454,7 +1454,7 @@
       [feature = 'boundary_national_park'],
       [feature = 'leisure_nature_reserve'],
       [feature = 'boundary_protected_area'] {
-        text-fill: @protected-area;
+        text-fill: @forest-text;
       }
     }
   }
@@ -1773,7 +1773,7 @@
     }
   }
 
-  [feature = 'leisure_marina'][zoom >= 15] {
+  [feature = 'leisure_marina'][zoom >= 16] {
     [zoom >= 10][way_pixels > 3000],
     [zoom >= 17] {
       text-name: "[name]";
@@ -1812,7 +1812,7 @@
     }
   }
 
-  [feature = 'man_made_lighthouse'][zoom >= 15],
+  [feature = 'man_made_lighthouse'][zoom >= 16],
   [feature = 'man_made_windmill'][zoom >= 17] {
     text-name: "[name]";
     text-size: @standard-font-size;

@@ -195,7 +195,7 @@
     text-max-char-angle-delta: 15;
     text-spacing: 400;
     text-placement: line;
-    [zoom >= 15] {
+    [zoom >= 18] {
       text-size: 12;
     }
   }
@@ -219,8 +219,8 @@
       text-wrap-width: 25; // 2.5 em
       text-line-spacing: -1.5; // -0.15 em
       [way_pixels > 12000][feature != 'natural_strait'][feature != 'natural_bay'],
-      [zoom >= 15][feature = 'natural_strait'],
-      [zoom >= 15][feature = 'natural_bay'] {
+      [zoom >= 18][feature = 'natural_strait'],
+      [zoom >= 18][feature = 'natural_bay'] {
         text-size: 12;
         text-wrap-width: 37; // 3.1 em
         text-line-spacing: -1.6; // -0.13 em

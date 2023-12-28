@@ -120,8 +120,8 @@
 #text-line {
   [feature = 'waterway_dam'],
   [feature = 'waterway_weir'] {
-    #text-point[zoom >= 15],
-    #text-line[zoom >= 15] {
+    #text-point[zoom >= 17],
+    #text-line[zoom >= 17] {
       text-name: "[name]";
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
@@ -140,9 +140,9 @@
     }
   }
 
-  [feature = 'man_made_breakwater'][zoom >= 15],
-  [feature = 'man_made_groyne'][zoom >= 15],
-  [feature = 'man_made_pier'][zoom >= 15] {
+  [feature = 'man_made_breakwater'][zoom >= 17],
+  [feature = 'man_made_groyne'][zoom >= 17],
+  [feature = 'man_made_pier'][zoom >= 17] {
     #text-point,
     #text-line {
       text-name: "[name]";
