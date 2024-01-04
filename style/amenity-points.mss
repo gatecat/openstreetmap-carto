@@ -2188,7 +2188,7 @@
   }
 */
 
-  [feature = 'amenity_ferry_terminal'][zoom >= 15] {
+  [feature = 'amenity_ferry_terminal'][zoom >= 17] {
     text-name: "[name]";
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;

@@ -32,24 +32,53 @@
     }
   }
 
-  [aerialway = 'chair_lift'],
-  [aerialway = 'drag_lift'],
-  [aerialway = 't-bar'],
-  [aerialway = 'j-bar'],
-  [aerialway = 'platter'],
-  [aerialway = 'rope_tow'],
-  [aerialway = 'zip_line'] {
+  [aerialway = 'chair_lift'] {
     [zoom >= 12] {
       line/line-width: 1;
       line/line-join: round;
       line/line-cap: round;
       line/line-color: #808080;
 
-      dash/line-width: 4;
+      dash/line-width: 5;
+      dash/line-join: round;
+      dash/line-color: black;
+      dash/line-dasharray: 2,29;
+      dash/line-clip: false;
+
+    }
+  }
+  [aerialway = 'drag_lift'],
+  [aerialway = 't-bar'],
+  [aerialway = 'j-bar'],
+  [aerialway = 'platter'],
+  [aerialway = 'rope_tow'] {
+    [zoom >= 12] {
+      line/line-width: 1;
+      line/line-join: round;
+      line/line-cap: round;
+      line/line-color: #808080;
+
+      dash/line-width: 3.5;
       dash/line-join: round;
       dash/line-color: black;
       dash/line-dasharray: 1,30;
       dash/line-clip: false;
+
+
+      tee/line-width: 1.5;
+      tee/line-join: round;
+      tee/line-color: black;
+      tee/line-dasharray: 4,27;
+      tee/line-clip: false;
+    }
+  }
+
+  [aerialway = 'zip_line'] {
+    [zoom >= 12] {
+      line/line-width: 1;
+      line/line-join: round;
+      line/line-cap: round;
+      line/line-color: #808080;
     }
   }
 
