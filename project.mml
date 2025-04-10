@@ -452,6 +452,8 @@ Layer:
             construction,
             service,
             '' as piste,
+            '' as sac_scale,
+            '' as ferrata_scale,
             link,
             layernotnull
           FROM ( -- subselect that contains both roads and rail
@@ -689,6 +691,8 @@ Layer:
             construction,
             service,
             piste,
+            sac_scale,
+            ferrata_scale,
             link,
             layernotnull
           FROM ( -- subselect that contains both roads and rail/aero
@@ -713,6 +717,8 @@ Layer:
                   ELSE 'INT-normal'::text
                 END AS service,
                 CASE WHEN ST_Length(way) > 500 THEN tags->'piste:type' ELSE '' END AS piste,
+                tags->'sac_scale' AS sac_scale,
+                CASE WHEN ST_Length(way) > 200 AND tags->'via_ferrata_scale' IS NOT NULL THEN tags->'via_ferrata_scale' ELSE '' END AS ferrata_scale,
                 CASE
                   WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary_link') THEN 'yes'
                   ELSE 'no'
@@ -749,6 +755,8 @@ Layer:
                 construction,
                 CASE WHEN service IN ('parking_aisle', 'drive-through', 'driveway') OR leisure IN ('slipway') THEN 'INT-minor'::text ELSE 'INT-normal'::text END AS service,
                 'no' AS piste,
+                '' AS ferrata_scale,
+                'no' AS sac_scale,
                 'no' AS link,
                 COALESCE(layer,0) AS layernotnull,
                 osm_id,
@@ -924,6 +932,8 @@ Layer:
             construction,
             service,
             '' as piste,
+            '' as sac_scale,
+            '' as ferrata_scale,
             link,
             layernotnull
           FROM ( -- subselect that contains both roads and rail/aero

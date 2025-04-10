@@ -694,7 +694,8 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
 
     [feature = 'highway_footway'],
     [feature = 'highway_path'],
-    [feature = 'highway_steps'] {
+    [feature = 'highway_steps'],
+    [feature = 'highway_via_ferrata'] {
       [zoom >= 14] {
         line-width: @path-width;
         line-color: #000000;
@@ -706,16 +707,19 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           marker-fill: #00b2ec;
           marker-comp-op: darken;
         }
-      }
-    }
-
-    [feature = 'highway_via_ferrata'] {
-      [zoom >= 14] {
-        line-width: @path-width;
-        line-color: #000000;
-        line-dasharray: 0.5,3.5;
-        line-join: bevel;
-        line-cap: round;
+        [feature = 'highway_via_ferrata'],
+        [ferrata_scale != ''][ferrata_scale != '1'] {
+          marker-file: url('symbols/via_ferrata.svg');
+          marker-width: 8;
+          marker-fill: #00b2ec;
+          marker-comp-op: darken;
+        }
+        [sac_scale = 'alpine_hiking'],
+        [sac_scale = 'demanding_alpine_hiking'],
+        [sac_scale = 'difficult_alpine_hiking'],
+        [feature = 'highway_via_ferrata'] {
+          line-dasharray: 1,2;
+        }
       }
     }
 
