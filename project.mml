@@ -153,7 +153,7 @@ Layer:
         (SELECT
             way
          FROM contour_hd
-         WHERE height::int % 20 = 0 AND  height::int % 50 != 0 AND height::int % 200 != 0
+         WHERE height::int % 50 = 0 AND  height::int % 100 != 0 AND height::int % 200 != 0
         ) AS contours10
     properties:
       minzoom: 14

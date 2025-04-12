@@ -761,14 +761,14 @@
     marker-fill: @man-made-icon;
   }
 
-  [feature = 'natural_peak'][zoom >= 11][name != null] {
+  [feature = 'natural_peak'][zoom >= 11][name != ''][name != null] {
     marker-file: url('symbols/natural/peak.svg');
     marker-fill: @landform-color;
     marker-clip: false;
     marker-allow-overlap: true;
   }
 
-  [feature = 'natural_volcano'][zoom >= 11][name != null] {
+  [feature = 'natural_volcano'][zoom >= 11][name != ''][name != null] {
     marker-file: url('symbols/natural/peak.svg');
     marker-fill: @landform-color;
     marker-clip: false;

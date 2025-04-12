@@ -707,7 +707,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           marker-fill: #00b2ec;
           marker-comp-op: darken;
         }
-        [feature = 'highway_via_ferrata'],
         [ferrata_scale != ''][ferrata_scale != '1'] {
           marker-file: url('symbols/via_ferrata.svg');
           marker-width: 8;
