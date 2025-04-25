@@ -17,7 +17,7 @@
     [zoom >= 14] {
       polygon-fill: @building-fill;
       line-color: @building-line;
-      line-width: .375;
+      line-width: .5;
       line-clip: false;
     }
     [amenity = 'hospital'],

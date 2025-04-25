@@ -67,14 +67,14 @@
 @primary-width: 4;
 @secondary-width: 3;
 @tertiary-width: 3;
-@residential-width:          2.5;
-@living-street-width:         2.5;
-@unclassified-width:         2.5;
+@residential-width:          2;
+@living-street-width:         2;
+@unclassified-width:         2;
 
 @pedestrian-width:            2;
-@road-width:                  2.5;
-@service-width:               2.5;
-@minor-service-width:         2.5;
+@road-width:                  2;
+@service-width:               2;
+@minor-service-width:         2;
 
 @track-width:                 2;
 @path-width:                  0.75;
