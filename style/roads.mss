@@ -692,10 +692,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       }
     }
 
-    [feature = 'highway_footway'],
-    [feature = 'highway_path'],
-    [feature = 'highway_steps'],
-    [feature = 'highway_via_ferrata'] {
+    [feature = 'highway_footway'][access != 'no'],
+    [feature = 'highway_path'][access != 'no'],
+    [feature = 'highway_steps'][access != 'no'],
+    [feature = 'highway_via_ferrata'][access != 'no'] {
       [zoom >= 14] {
         line-width: @path-width;
         line-color: #000000;
